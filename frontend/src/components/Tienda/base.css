@@ -1,0 +1,81 @@
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color-light);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+  
+.no-data-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.texto-post-banner {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin: 40px auto; /* Añade espacio arriba y abajo */
+    padding: 0;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+  
+.texto-post-banner h3 {
+    font-size: 5rem; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+    color: #FFFFFF; /* Color blanco para contraste */
+    margin-bottom: -2%; /* Elimina márgenes adicionales */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Sombra para mejorar la legibilidad */
+}
+
+
+
+/* Animación para entrada y salida */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+    }
+    10%, 90% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.notification-message {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4bca2c; /* Color naranja vibrante para mayor contraste */
+    color: #fff; /* Texto blanco para máximo contraste */
+    padding: 18px 32px; /* Aumentado el padding para que sea más prominente */
+    border-radius: 12px; /* Radio de borde más grande para suavidad */
+    z-index: 1000;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada para destacar */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
+    font-size: 16px; /* Tamaño de fuente aumentado para mayor visibilidad */
+    font-weight: 500; /* Peso de fuente semibold para resaltar el texto */
+    line-height: 1.4; /* Mejora la legibilidad */
+    letter-spacing: 0.5px; /* Espaciado entre letras para un look profesional */
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+    max-width: 400px; /* Ancho máximo ajustado para evitar mensajes demasiado largos */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    animation: fadeInOut 4s ease-in-out forwards; /* Animación más lenta para captar atención */
+}
+
+/* Animación para entrada y salida */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    10%, 90% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}

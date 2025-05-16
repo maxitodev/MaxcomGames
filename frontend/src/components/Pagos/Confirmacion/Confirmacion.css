@@ -1,0 +1,131 @@
+/* Estilos generales */
+.confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0a1b3e, #0d2c64);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.confirmation-container {
+  margin-top: 10%;
+  text-align: center;
+  background: rgba(56, 56, 56, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 60px 80px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.confirmation-container:hover {
+  transform: scale(1.02);
+}
+
+.confirmation-container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+background-color: #00e1ff;
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowText 5s infinite alternate;
+}
+
+.confirmation-container p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ccc;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.confirmation-button {
+  background: linear-gradient(135deg, #00bcd4, #2196f3);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.confirmation-button:hover {
+  transform: translateY(-5px);
+
+}
+
+.confirmation-button:active {
+  transform: scale(0.98);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rainbowText {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Decoración adicional */
+.confirmation-container::before,
+.confirmation-container::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: 50%;
+  animation: float 8s infinite ease-in-out;
+}
+
+.confirmation-container::before {
+  top: -70px;
+  left: -70px;
+}
+
+.confirmation-container::after {
+  bottom: -70px;
+  right: -70px;
+  animation-direction: reverse;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

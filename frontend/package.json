@@ -1,0 +1,56 @@
+{
+  "name": "maxcomgames",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": ".",
+  "description": "MaxcomGames",
+  "dependencies": {
+    "@react-oauth/google": "^0.12.1",
+    "@svgr/webpack": "^8.1.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "axios": "^1.8.4",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.1",
+    "jwt-decode": "^4.0.0",
+    "nanoid": "^5.1.5",
+    "postcss": "^8.5.3",
+    "process": "^0.11.10",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.4.0",
+    "react-scripts": "^5.0.1",
+    "react-slick": "^0.30.3",
+    "resolve-url-loader": "^5.0.0",
+    "slick-carousel": "^1.8.1",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.5",
+    "web-vitals": "^4.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

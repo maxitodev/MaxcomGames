@@ -1,0 +1,197 @@
+/* Estilos generales */
+.ayuda-container {
+    margin-top: 6%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .ayuda-container h1 {
+    font-size: 3em;
+    margin-top: 5%;
+    color: #00f7ff; /* Color primario */
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Información de contacto */
+  .contacto-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+  }
+  
+  .contacto-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+  }
+  
+  .contacto-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contacto-item span {
+    font-size: 2em;
+    margin-right: 10px;
+    color: #00f7ff; /* Color primario */
+    transition: color 0.3s;
+  }
+  
+  .contacto-item a {
+    color: #f8f9fa; /* Color de texto */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .contacto-item:hover span,
+  .contacto-item:hover a {
+    color: #ffffff; /* Color secundario */
+  }
+  
+  /* Formulario de contacto */
+  .contacto-form {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    padding: 30px;
+    border-radius: 12px;
+    margin: 40px 0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff; /* Color secundario */
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: #f8f9fa; /* Color de texto */
+    transition: all 0.3s ease;
+    font-size: 1em;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: #00f7ff; /* Color primario */
+    outline: none;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  /* Botón de enviar */
+  .submit-button {
+    background: linear-gradient(135deg, #00ffea, #00f7ff);
+    color: rgb(0, 0, 0);
+    font-size: 1.1em;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+  
+  .submit-button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+  
+  .submit-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Enlace a preguntas frecuentes */
+  .faq-link {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .faq-link a {
+    color: #00f7ff; /* Color primario */
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: bold;
+  }
+  
+  .faq-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animaciones */
+  .ayuda-container {
+    animation: fadeIn 1s ease;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .contacto-item {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .submit-button {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 rgba(52, 152, 219, 0.3); }
+    70% { box-shadow: 0 0 20px rgba(52, 152, 219, 0.6); }
+    100% { box-shadow: 0 0 0 rgba(52, 152, 219, 0.3); }
+  }
+
+  /* Notificación */
+  .notification {
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 600px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .notification.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .notification.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  /* Animación de notificación */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }

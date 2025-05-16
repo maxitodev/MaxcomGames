@@ -1,0 +1,109 @@
+/* Sandbox.css */
+
+.sandbox-page {
+    margin-top: 5%;
+    min-height: 10vh;
+    padding: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-align: center; /* Alinea el título a la izquierda */
+  }
+  
+  .test-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start; /* Asegura que todo el contenido esté alineado a la izquierda */
+  }
+  
+  .credential-section {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    background: #131313;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  }
+  
+  .credential-section h4 {
+    font-size: 1.2rem;
+    color: #00ffff;
+    margin-bottom: 0.8rem;
+    text-align: left; /* Alinea los subtítulos a la izquierda */
+  }
+  
+  .credential-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Asegura que la lista ocupe todo el ancho */
+  }
+  
+  .credential-section li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    width: 100%; /* Asegura que cada elemento de la lista ocupe todo el ancho */
+  }
+  
+  .credential-section code {
+    background: #f0f0f0;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    color: #000000;
+    word-break: break-all; /* Maneja texto largo sin romper el diseño */
+  }
+  
+  .credential-section button {
+    background: #00e1ff;
+    color: #000000;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+  
+  .credential-section button:hover {
+    background: #00eeff;
+  }
+  
+  .disclaimer {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-top: 1.5rem;
+    text-align: left; /* Alinea el aviso legal a la izquierda */
+  }
+  
+  .copy-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00eeff;
+    color: #000000;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    z-index: 1000;
+  }

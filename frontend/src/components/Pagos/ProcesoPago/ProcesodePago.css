@@ -1,0 +1,434 @@
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ @keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contenedor principal */
+.proceso-pago-container {
+  display: flex;
+  padding: 2rem;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  background: linear-gradient(135deg, #1b1b1b, #000000);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  transition: box-shadow 0.3s ease;
+}
+
+.proceso-pago-container:hover {
+  box-shadow: 0 10px 25px rgb(17, 17, 17);
+}
+
+/* Secciones principales */
+.proceso-pago-container .left-section,
+.proceso-pago-container .right-section,
+.proceso-pago-container .payment-summary {
+  background: rgb(19, 19, 19);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proceso-pago-container .left-section:hover,
+.proceso-pago-container .right-section:hover,
+.proceso-pago-container .payment-summary:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.proceso-pago-container .left-section {
+  flex: 2;
+  animation: slideInLeft 0.5s ease-in-out;
+}
+
+.proceso-pago-container .right-section {
+  flex: 1;
+  animation: slideInRight 0.5s ease-in-out;
+}
+
+.proceso-pago-container .payment-summary {
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+/* Encabezados */
+.proceso-pago-container h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.proceso-pago-container h2:hover::after {
+  width: 100%;
+  background: #ff0000;
+}
+
+.proceso-pago-container h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.proceso-pago-container h3:hover {
+  color: #00eeff;
+}
+
+/* Lista de productos */
+.proceso-pago-container .product-list {
+  margin-bottom: 2rem;
+}
+
+.proceso-pago-container .product-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.proceso-pago-container .product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.proceso-pago-container .product-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proceso-pago-container .product-item img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.proceso-pago-container .product-details h4 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.proceso-pago-container .product-details h4:hover {
+  color: #00eeff;
+}
+
+.proceso-pago-container .product-details p {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.proceso-pago-container .product-details p:hover {
+  color: #ff0000;
+}
+
+/* Controles de cantidad y botones */
+.proceso-pago-container .quantity-controls,
+.proceso-pago-container .discount-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.proceso-pago-container .quantity-controls button,
+.proceso-pago-container .discount-section button,
+.proceso-pago-container .pay-button {
+  padding: 0.5rem 1rem;
+  background: #00e1ff;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proceso-pago-container .quantity-controls button:hover,
+.proceso-pago-container .discount-section button:hover,
+.proceso-pago-container .pay-button:hover {
+  background: #00b7ff;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.proceso-pago-container .remove-btn {
+  background: #ff0000;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proceso-pago-container .remove-btn:hover {
+  background: #cc0000;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Métodos de pago y descuentos */
+.proceso-pago-container .payment-methods select,
+.proceso-pago-container .discount-section input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #ffffff;
+  background: #1b1b1b;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proceso-pago-container .payment-methods select:focus,
+.proceso-pago-container .discount-section input:focus {
+  border-color: #00eeff;
+  outline: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Resumen de pago */
+.proceso-pago-container .breakdown p {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.proceso-pago-container .breakdown p:hover {
+  color: #00eeff;
+}
+
+.proceso-pago-container .breakdown hr {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 1rem 0;
+}
+
+/* Botón de pago */
+.proceso-pago-container .pay-button {
+  width: 100%;
+  padding: 1.5rem;
+  background: #00eeff;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proceso-pago-container .pay-button:hover {
+  background: #00ffea;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.proceso-pago-container .error {
+  color: #ff0000;
+  margin: 1rem 0;
+  font-size: 1rem;
+  text-align: center;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+.proceso-pago-container .test-credentials {
+  background: #242424;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 30px;
+  border: 1px solid #000000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.proceso-pago-container .test-credentials:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.proceso-pago-container .test-credentials h3 {
+  color: #ffffff;
+  margin-bottom: 18px;
+  font-size: 1.3em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.proceso-pago-container .credential-section {
+  margin-bottom: 25px;
+  background: rgb(31, 31, 31);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proceso-pago-container .credential-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.proceso-pago-container .credential-section h4 {
+  color: #00ffff;
+  margin-bottom: 12px;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.proceso-pago-container .credential-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.proceso-pago-container .credential-section li {
+  margin: 8px 0;
+  font-size: 0.95em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.proceso-pago-container .credential-section code {
+  background: #000000;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 0.9em;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.proceso-pago-container .credential-section code:hover {
+  background: #e0e0e0;
+  color: #b02a1c;
+}
+
+.proceso-pago-container .disclaimer {
+  font-size: 0.9em;
+  color: #ffffff;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.proceso-pago-container .disclaimer a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.proceso-pago-container .disclaimer a:hover {
+  color: #00ffff;
+}
+
+/* Estilos para los botones de copiar */
+.proceso-pago-container .test-credentials button {
+  background-color: #00ffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 0.8em;
+  transition: background-color 0.3s ease;
+}
+
+.proceso-pago-container .test-credentials button:hover {
+  background-color: #00ffff;
+}
+
+.proceso-pago-container .test-credentials button:active {
+  background-color: #00ffff;
+}
+
+.proceso-pago-container .copy-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #00eeff;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  animation: fadeIn 0.3s ease;
+  z-index: 1000;
+}

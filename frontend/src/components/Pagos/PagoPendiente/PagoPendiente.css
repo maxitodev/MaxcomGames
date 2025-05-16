@@ -1,0 +1,32 @@
+.pending-container {
+  margin-top: 5%;
+  text-align: center;
+  padding: 20px;
+}
+
+.pending-container h1 {
+  color: orange;
+  font-size: 2rem;
+}
+
+.pending-container p {
+  margin: 10px 0;
+}
+
+.pending-buttons {
+  margin-top: 20px;
+}
+
+.pending-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #ffa726;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pending-button:hover {
+  background-color: #fb8c00;
+}

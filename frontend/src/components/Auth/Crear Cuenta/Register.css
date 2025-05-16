@@ -1,0 +1,207 @@
+/* Contenedor del formulario de registro */
+.register-container {
+  max-width: 400px;
+  margin: 10rem auto;
+  padding: 2rem;
+  background: #1b1b1b;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-container h2 {
+  font-size: 2rem;
+  color: #00bcd4;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.register-container h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #00bcd4;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+/* Formulario */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+
+.register-form input,
+.register-form button {
+  display: block;
+  width: 100%;
+  margin: 1px 0;
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background-color: #1c1c1c;
+  color: var(--text-color-light);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 16px 24px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background: #1a1a1a;
+  font-size: 16px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.register-form input::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+.register-form input:not(:disabled):hover {
+  border-color: #555;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.register-form input:focus {
+  border-color: #00d9ff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 217, 255, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.register-form input:disabled {
+  background: #2c2c2c;
+  color: #666;
+  border-color: #444;
+  cursor: not-allowed;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #11bfcb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-form button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: #f44336;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  animation: shake 0.5s ease-in-out; /* Animación de vibración */
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+/* Casilla de términos y condiciones */
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra horizontalmente */
+  margin-top: 15px;
+}
+
+.terms-checkbox input {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  accent-color: #00bcd4; /* Color del checkbox */
+}
+
+.terms-checkbox label {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.terms-checkbox label:hover {
+  color: #00bcd4;
+}
+
+/* Contenedor de éxito */
+.success-container {
+  text-align: center;
+  margin-top: 7%;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 400px;
+  background: linear-gradient(to bottom, #1e1e1e, #2c2c2c);
+  box-shadow: var(--shadow-light);
+  border: 2px solid var(--success-color);
+  animation: pulse 1.5s infinite ease-in-out; /* Animación de pulso */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.success-message {
+  color: var(--success-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.redirect-message {
+  font-size: 1rem;
+  color: #d4d4d4;
+}

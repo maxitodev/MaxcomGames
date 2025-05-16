@@ -1,0 +1,8 @@
+Cambiar colores de flecha.
+colores para flechas internas
+colores para flechas a tecnologías
+Dividir el modulo tecnologías
+
+
+Sequence Carrito
+La comunicacion que hay entre los modulos

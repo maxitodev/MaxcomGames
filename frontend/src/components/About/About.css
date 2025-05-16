@@ -1,0 +1,86 @@
+/* Estilos generales */
+.about-container {
+    background: linear-gradient(135deg, #1e1e1e, #121212);
+    color: #d4d4d4;
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    padding: 40px 20px;
+    max-width: 800px; /* Ancho máximo para centrar el contenido */
+    margin: 0 auto; /* Centra el contenedor */
+    border-radius: 10px; /* Bordes redondeados suaves */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para destacar el contenedor */
+  }
+  
+  .about-container h1 {
+    margin-top: 20%;
+    font-size: 28px;
+    color: #00e1ff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-align: center; /* Centra el título */
+    position: relative; /* Para agregar detalles decorativos */
+  }
+  
+  .about-container h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #00e1ff;
+    margin: 10px auto 20px; /* Línea decorativa debajo del título */
+  }
+  
+  .about-container p {
+    font-size: 16px;
+    line-height: 1.7; /* Mejora la legibilidad */
+    margin: 15px 0;
+    opacity: 0.9; /* Reduce la opacidad para darle un toque suave */
+    text-align: justify; /* Justifica el texto para un diseño más limpio */
+  }
+  
+  .about-container p strong {
+    color: #00e1ff; /* Resalta palabras clave en azul cian */
+    font-weight: 600; /* Negrita moderada */
+  }
+  
+  /* Efectos visuales para mejorar la experiencia */
+  .about-container p:hover {
+    opacity: 1; /* Aumenta la opacidad al pasar el mouse */
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Botón opcional para proyectos o enlaces adicionales */
+  .about-container .cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: rgba(0, 188, 212, 0.1);
+    color: #d4d4d4;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  }
+  
+  .about-container .cta-button:hover {
+    background-color: rgba(0, 188, 212, 0.3);
+    color: #00e1ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Refuerza la sombra en hover */
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 30px 15px;
+    }
+  
+    .about-container h1 {
+      font-size: 24px;
+    }
+  
+    .about-container p {
+      font-size: 14px;
+    }
+  }

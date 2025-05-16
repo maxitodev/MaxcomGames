@@ -1,0 +1,12 @@
+:root {
+    --primary-color: #00ffff;
+    --secondary-color: #00ffff;
+    --background-color: #121212;
+    --navbar-color: #1e1e1e;
+    --text-color-light: #FFFFFF;
+    --button-hover-color: #00ffff;
+    --font-size-base: 1rem;
+    --font-family: 'Roboto', sans-serif;
+    --shadow-light: 0 2px 4px rgba(255, 255, 255, 0.3);
+    --shadow-heavy: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }

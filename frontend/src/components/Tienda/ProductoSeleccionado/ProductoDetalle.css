@@ -1,0 +1,242 @@
+/* Contenedor principal */
+.producto-detalle-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1400px; /* aumentado de 1200px para un contenedor más ancho */
+  margin: 80px auto;
+  padding: 40px;
+  gap: 40px;
+  background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), -10px -10px 20px rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Animación de fondo (más sutil y dinámica) */
+.producto-detalle-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 10%, transparent 10.01%);
+  background-size: 50px 50px;
+  animation: moveGradient 15s linear infinite;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+@keyframes moveGradient {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Columna izquierda (imagen) */
+.producto-detalle-container .producto-imagen {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  width: 500px !important; /* actualizado de 800px para mayor anchura */
+  height: 1000px !important; /* actualizado de 800px para mayor longitud */
+  min-height: 500px !important; /* fuerza la altura mínima */
+  background-color: #1e1e1e; /* Fondo oscuro para imágenes pequeñas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.producto-detalle-container .producto-imagen:hover {
+  transform: scale(1.02); /* Ligero aumento de tamaño */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+}
+
+.producto-detalle-container .producto-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* se ajusta la imagen al recuadro sin recortes */
+  transition: transform 0.4s ease, filter 0.4s ease;
+  border-radius: 20px;
+}
+
+.producto-detalle-container .producto-imagen:hover img {
+  transform: scale(1.1); /* Zoom suave */
+  filter: brightness(1.1) contrast(1.1); /* Mejora visual sutil */
+}
+
+/* Capa de brillo adicional */
+.producto-detalle-container .producto-imagen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+}
+
+.producto-detalle-container .producto-imagen:hover::after {
+  opacity: 1;
+  transform: rotate(45deg) translate(50px, 50px); /* Efecto de movimiento */
+}
+
+/* Columna derecha (información) */
+.producto-detalle-container .producto-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #ffffff;
+}
+
+.producto-detalle-container .nombre-producto {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-align: left;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.producto-detalle-container .nombre-producto:hover {
+  color: #00aaff;
+  transform: translateX(8px);
+}
+
+.producto-detalle-container .precio {
+  font-size: 2rem;
+  color: #00ff84;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 12px 24px;
+  border-radius: 12px;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.producto-detalle-container .precio:hover {
+  background: rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.producto-detalle-container .stock {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00ff84;
+  text-align: left;
+}
+
+.producto-detalle-container .stock.agotado {
+  color: #ff4d4d;
+}
+
+.producto-detalle-container .descripcion {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.producto-detalle-container .botones {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.producto-detalle-container .comprar-ahora,
+.producto-detalle-container .añadir-carrito {
+  padding: 16px 32px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.producto-detalle-container .comprar-ahora {
+  background: linear-gradient(145deg, #007bff, #0056b3);
+  color: #ffffff;
+}
+
+.producto-detalle-container .comprar-ahora:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.producto-detalle-container .añadir-carrito {
+  background: linear-gradient(145deg, #28a745, #218838);
+  color: #ffffff;
+}
+
+.producto-detalle-container .añadir-carrito:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.producto-detalle-container .añadir-carrito.disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Notificaciones */
+.producto-detalle-container .notificacion {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  color: #155724;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  animation: fadeSlideDown 0.6s ease forwards;
+  text-align: center;
+}
+
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.producto-detalle-container .notificacion.error {
+  background: rgba(255, 230, 230, 0.95);
+  color: #721c24;
+}
+
+/* Estados de carga y error */
+.producto-detalle-container .loading,
+.producto-detalle-container .error {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.producto-detalle-container .error {
+  color: #ff4d4d;
+}

@@ -1,0 +1,75 @@
+/* Contenedor principal del popup */
+.login-popup {
+  position: absolute;
+  top: 5%;
+  right: 14%;
+  width: 200px;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Botón de cierre */
+.close-popup {
+  position: absolute;
+  top: -3px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ff5f5f;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.close-popup:hover {
+  transform: scale(1.2);
+  color: #ff3b3b;
+}
+
+/* Estilos base para los botones del popup */
+.popup-button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estado normal de los botones */
+.popup-button {
+  background: linear-gradient(135deg, #00eeff, #00eeff);
+  color: #121212;
+}
+
+/* Hover: efecto de elevación y cambio de color */
+.popup-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Active: efecto de presión */
+.popup-button:active {
+  transform: translateY(2px);
+  background: #005e63;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes específicos para el primer y último botón */
+.popup-button:first-of-type {
+  margin-top: 0;
+}
+
+.popup-button:last-of-type {
+  margin-bottom: 0;
+}

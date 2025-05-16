@@ -1,0 +1,255 @@
+.login-container {
+  max-width: 400px;
+  margin: 10rem auto;
+  padding: 2rem;
+  background: #1b1b1b;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h2 {
+  font-size: 2rem;
+  color: #00bcd4;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.login-container h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #00bcd4;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+
+.login-form input[type="email"] {
+  width: 100%;
+  padding: 16px 24px;
+  margin: px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background: #1a1a1a;
+  font-size: 16px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.login-form input[type="email"]::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+.login-form input[type="email"]:not(:disabled):hover {
+  border-color: #555;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.login-form input[type="email"]:focus {
+  border-color: #00d9ff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 217, 255, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.login-form input[type="email"]:disabled {
+  background: #2c2c2c;
+  color: #666;
+  border-color: #444;
+  cursor: not-allowed;
+}
+
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 16px 24px;
+  margin: 5px 0;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background: #1a1a1a;
+  font-size: 16px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.login-form input[type="password"]::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+.login-form input[type="password"]:not(:disabled):hover {
+  border-color: #555;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.login-form input[type="password"]:focus {
+  border-color: #00d9ff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 217, 255, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.login-form input[type="password"]:disabled {
+  background: #2c2c2c;
+  color: #666;
+  border-color: #444;
+  cursor: not-allowed;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #11bfcb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-form button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.error-message {
+  color: #f44336;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 25px 0;
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-button {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-button:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+  box-shadow: 0 8px 16px rgba(0, 205, 214, 0.5);
+}
+
+.google-login {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.google-login button {
+  width: 100%;
+  max-width: 220px;
+  padding: 12px 20px;
+  background: #db4437;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.google-login button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.facebook-button {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+.create-account-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.create-account-link a {
+  color: #007bff;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.create-account-link a:hover {
+  color: #0056b3;
+}
+
+.forgot-password-link {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.forgot-password-link a {
+  color: #00bcd4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password-link a:hover {
+  color: #0097a7;
+  text-decoration: underline;
+}

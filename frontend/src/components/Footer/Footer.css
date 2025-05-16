@@ -1,0 +1,242 @@
+/* Archivo Footer.css */
+
+.footer {
+    margin-top: 5%;
+    background: linear-gradient(135deg, #1e1e1e, #121212);
+    color: #d4d4d4;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    overflow-x: hidden;
+    gap: 30px;
+  }
+  
+  .footer-sections {
+    display: flex;
+    flex-direction: row; /* Cambiado a fila para desktop */
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    gap: 30px; /* Espacio entre columnas */
+  }
+  
+  .footer-about,
+  .footer-contact {
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
+  }
+  
+  .footer-about h3,
+  .footer-contact h3 {
+    font-size: 18px;
+    color: #00e1ff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  
+
+  .footer-about p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.8;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  
+  .contact-link {
+    color: #d4d4d4;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 30px;
+    background: rgba(0, 188, 212, 0.1);
+    transition: all 0.3s ease;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .contact-link:hover {
+    background: rgba(0, 188, 212, 0.2);
+    color: #00e1ff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 18px;
+    margin-top: 15px;
+  }
+  
+  .social-links a {
+    color: #d4d4d4;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+  
+  .social-links a:hover {
+    color: #00e1ff;
+    transform: scale(1.1);
+    text-shadow: 0 2px 4px rgba(0, 188, 212, 0.8);
+    background: rgba(0, 188, 212, 0.2);
+  }
+  
+  .footer-logo2 {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  
+  .logo2-image {
+    width: 200px;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo2-image:hover {
+    transform: translateY(-3px);
+  }
+  
+  .footer-copyright {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+    margin-top: 0px;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer-button {
+    background: none;
+    border: none;
+    color: #00f7ff;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    padding: 8px 15px;
+    border: 2px solid #00e1ff;
+    border-radius: 30px;
+  }
+  
+  .footer-button:hover {
+    color: #00bcd4;
+    transform: scale(1.05);
+    background: rgba(0, 247, 255, 0.1);
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .footer-sections {
+      flex-direction: column; /* Vuelve a columna en móviles */
+      gap: 20px;
+    }
+  
+    .footer-about,
+    .footer-contact {
+      padding: 0;
+      text-align: center;
+    }
+  
+    .footer-about p,
+    .contact-link {
+      font-size: 12px;
+    }
+  
+    .social-links a {
+      font-size: 18px;
+    }
+  
+    .logo2-image {
+      width: 150px;
+    }
+  
+    .footer-copyright {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-button {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  
+    .contact-link {
+      font-size: 10px;
+      padding: 8px 10px;
+    }
+  
+    .social-links a {
+      font-size: 16px;
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Ajustes para iconos de contacto */
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .social-icon {
+      width: 28px;
+      height: 28px;
+    }
+  }

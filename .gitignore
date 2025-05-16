@@ -1,0 +1,24 @@
+# Ignorar archivos de entorno
+/backend/.env
+/frontend/.env
+/frontend/.env.local
+/frontend/.env.development
+/frontend/.env.production
+/frontend/.env.test
+/frontend/.env.development.local
+/frontend/.env.production.local
+/frontend/.env.test.local
+# Ignorar archivos de configuración de IDE
+/.idea/
+# Ignorar archivos de configuración de editor
+/.vscode/
+# Ignorar archivos de configuración de sistema
+.DS_Store
+# Ignorar archivos de configuración de sistema
+Thumbs.db
+# Ignorar dependencias
+/backend/node_modules/
+/frontend/node_modules/
+
+# Ignorar archivos de build
+/frontend/build/

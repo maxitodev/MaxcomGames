@@ -1,0 +1,161 @@
+.oferta-container {
+  border-radius: 12px;
+  margin-top: 40px;
+  padding: 15px;
+  height: auto;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.oferta-container:hover {
+  transform: scale(1);
+}
+
+.oferta-container .banner-title-button {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 15px 100px;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-light);
+}
+
+.oferta-container .banner-title-button:hover {
+  background-color: var(--button-hover-color);
+  color: var(--text-color-light);
+  transform: scale(1.05);
+}
+
+.oferta-container .banner-product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  width: 98%;
+  border-radius: 12px;
+  background-color: var(--navbar-color);
+  box-shadow: var(--shadow-medium);
+  transition: box-shadow 0.3s ease;
+  height: auto;
+  min-height: 550px; /* Uniformidad sin exceso */
+}
+
+.oferta-container .banner-product:hover {
+  box-shadow: var(--shadow-large);
+}
+
+.oferta-container .banner-product-price {
+  position: absolute;
+  top: 40px;
+  right: 5px;
+  font-size: 2.5rem;
+  background: #363636;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-weight: bold;
+  color: #00eeff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.oferta-container .banner-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.oferta-container .banner-buy-button,
+.oferta-container .banner-cart-button {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+}
+
+.oferta-container .banner-buy-button:hover,
+.oferta-container .banner-cart-button:hover {
+  background-color: var(--button-hover-color);
+  color: var(--text-color-light);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-medium);
+}
+
+.oferta-container .slick-prev,
+.oferta-container .slick-next {
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.oferta-container .slick-prev::before,
+.oferta-container .slick-next::before {
+  content: '';
+  display: inline-block;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.oferta-container .slick-prev::before {
+  transform: rotate(135deg);
+}
+
+.oferta-container .slick-next::before {
+  transform: rotate(-45deg);
+}
+
+.oferta-container .banner-item-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-color-light);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin: 10px 0;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.oferta-container .banner-item-title:hover {
+  color: #00eeff;
+}
+
+.oferta-container .banner-product img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .oferta-container .banner-product {
+    max-height: 600px;
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .oferta-container .banner-product {
+    margin-bottom: 10px;
+    min-height: 500px;
+  }
+}

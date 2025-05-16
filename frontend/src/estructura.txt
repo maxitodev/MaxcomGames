@@ -1,0 +1,61 @@
+.
+├── App.css
+├── App.js
+├── App.test.js
+├── Apuntes.txt
+├── components
+│   ├── Auth
+│   │   ├── Crear Cuenta
+│   │   │   ├── Register.css
+│   │   │   ├── Register.js
+│   │   │   └── Terminos de Uso
+│   │   │       ├── Terms.css
+│   │   │       └── Terms.js
+│   │   └── Iniciar Sesión
+│   │       ├── Login.css
+│   │       └── Login.js
+│   ├── Menú
+│   │   ├── Navbar
+│   │   │   ├── LoginPopup.css
+│   │   │   ├── LoginPopup.js
+│   │   │   ├── Navbar.css
+│   │   │   └── Navbar.js
+│   │   ├── SidebarCart
+│   │   │   ├── SidebarCart.css
+│   │   │   └── SidebarCart.js
+│   │   └── SidebarMenu
+│   │       ├── SidebarMenu.css
+│   │       └── SidebarMenu.js
+│   ├── MisPedidos
+│   │   ├── MisPedidos.css
+│   │   └── MisPedidos.js
+│   ├── Pagos
+│   │   ├── Confirmacion.css
+│   │   ├── Confirmación.js
+│   │   ├── ProcesodePago.css
+│   │   └── ProcesodePago.js
+│   ├── Routes
+│   │   └── ProtectedRoute.js
+│   ├── Soporte
+│   │   ├── Ayuda.css
+│   │   ├── Ayuda.js
+│   │   ├── PreguntasF.css
+│   │   └── PreguntasF.js
+│   └── Tienda
+│       ├── banner-oferta.css
+│       ├── banner-promocion.css
+│       ├── base.css
+│       ├── ProductoSeleccionado
+│       │   ├── ProductoDetalle.css
+│       │   └── ProductoDetalle.js
+│       ├── responsive.css
+│       ├── Tienda.js
+│       └── variables.css
+├── estructura.txt
+├── index.css
+├── index.js
+├── logo.svg
+├── reportWebVitals.js
+└── setupTests.js
+
+15 directories, 43 files
