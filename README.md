@@ -80,7 +80,7 @@ Visita la aplicación en funcionamiento: **[maxcomgames.com](https://www.maxcomg
 - **Lenguajes**: JavaScript (59.5%), CSS (39.8%), HTML (0.7%)
 - **Creado**: Mayo 2025
 - **Última actualización**: Activo
-- **Estado**: En desarrollo
+- **Estado**: En Producción
 
 ## 🎯 Características Implementadas
 
@@ -130,22 +130,11 @@ Las contribuciones son bienvenidas. Si deseas colaborar:
 
 ## 👨‍💻 Desarrollador
 
-**Maximiliano** - [@maxitodev](https://github.com/maxitodev)
+**Max Sánchez** - [@maxitodev](https://github.com/maxitodev)
 
 - 🌐 Website: [maxcomgames.com](https://www.maxcomgames.com/)
-- 📧 Contacto: [Tu email aquí]
-- 💼 LinkedIn: [Tu LinkedIn aquí]
-
-## 📄 Licencia
-
-Este proyecto es de código abierto y está disponible bajo la licencia MIT.
-
-## 🙏 Agradecimientos
-
-- React Team por el increíble framework
-- Comunidad de desarrolladores por la inspiración
-- Recursos de diseño y UX utilizados
+- 📧 Contacto: [max.sanchezd13@gmail.com]
+- 💼 LinkedIn: [https://www.linkedin.com/in/maxitodev/]
 
 ---
 
-⭐ **¡Si te gusta este proyecto, dale una estrella!** ⭐
