@@ -102,32 +102,6 @@ Visita la aplicación en funcionamiento: **[maxcomgames.com](https://www.maxcomg
 - [ ] Optimización de rendimiento
 - [ ] SEO básico implementado
 
-## 📂 Estructura del Proyecto
-
-```
-MaxcomGames/
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── styles/
-│   │   └── utils/
-│   ├── package.json
-│   └── README.md
-└── README.md
-```
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Si deseas colaborar:
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
 ## 👨‍💻 Desarrollador
 
 **Max Sánchez** - [@maxitodev](https://github.com/maxitodev)
