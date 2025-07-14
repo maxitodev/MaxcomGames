@@ -20,5 +20,7 @@ Thumbs.db
 /backend/node_modules/
 /frontend/node_modules/
 
+.env*
+
 # Ignorar archivos de build
 /frontend/build/

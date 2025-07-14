@@ -16,17 +16,8 @@ const soporteRoutes = require('./routes/Support/soporte');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Leer orígenes permitidos desde variables de entorno y limpiar espacios
-const getAllowedOrigins = () => {
-  const env = process.env.NODE_ENV || 'development';
-  const origins = env === 'production'
-    ? process.env.ALLOWED_ORIGINS_PROD
-    : process.env.ALLOWED_ORIGINS_DEV;
-  return origins
-    ? origins.split(',').map(origin => origin.trim()).filter(Boolean)
-    : ['http://localhost:3000'];
-};
-const allowedOrigins = getAllowedOrigins();
+// Configuración simplificada de CORS usando solo FRONTEND_URL
+const allowedOrigins = [process.env.FRONTEND_URL || 'http://localhost:3000'];
 
 // Middleware CORS
 app.use(cors({
@@ -48,16 +39,6 @@ app.use(express.json());
 
 // Servir archivos estáticos desde la carpeta "public/uploads"
 app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
-
-// Servir frontend estático en producción
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'public')));
-  app.get('*', (req, res, next) => {
-    // Si la ruta empieza por /api o /uploads, pasar al siguiente middleware
-    if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) return next();
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-  });
-}
 
 // Conexión a MongoDB con opciones recomendadas
 mongoose.connect(process.env.MONGO_URI)
