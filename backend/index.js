@@ -48,6 +48,10 @@ mongoose.connect(process.env.MONGO_URI)
     process.exit(1);
   });
 
+  app.get("/api", (req, res) => {
+  res.json({ message: "API funcionando correctamente" });
+});
+
 // Usar rutas
 app.use('/api/auth', authRoutes);
 app.use('/api/usuarios', usuariosRoutes);
