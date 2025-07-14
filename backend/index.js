@@ -16,13 +16,13 @@ const soporteRoutes = require('./routes/Support/soporte');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Configuración simplificada de CORS usando solo FRONTEND_URL
-const allowedOrigins = [process.env.FRONTEND_URL || 'http://localhost:3000'];
+// Configuración de CORS con soporte para múltiples orígenes
+const rawOrigins = process.env.FRONTEND_URL || 'http://localhost:3000';
+const allowedOrigins = rawOrigins.split(',').map(origin => origin.trim());
 
 // Middleware CORS
 app.use(cors({
   origin: function (origin, callback) {
-    // Permitir peticiones sin origen (como Postman) o si el origen está permitido
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
