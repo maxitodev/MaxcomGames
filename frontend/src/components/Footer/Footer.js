@@ -79,7 +79,7 @@ const Footer = () => {
         <img src={logo2} alt="Logo 2" className="logo2-image" />
       </div>
       <div className="footer-copyright">
-        <p>© 2025 MAXCOMGAMES. Todos los derechos reservados.</p>
+        <p>© {new Date().getFullYear()} MAXCOMGAMES. Todos los derechos reservados.</p>
       </div>
     </footer>
   );
