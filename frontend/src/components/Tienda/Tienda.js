@@ -78,11 +78,10 @@ const Banner = ({ categoria, title, sliderSettings, noDataMessage, showNotificat
             <div 
               key={item.ID_Producto} 
               className="banner-slide"
-              onTouchStart={(e) => e.stopPropagation()}
             >
               {categoria === "Promoción" ? (
-                <div>
-                  <Link to={`/comprar/${item.ID_Producto}`}>
+                <div className="banner-slide-inner">
+                  <Link to={`/comprar/${item.ID_Producto}`} className="banner-image-link">
                     <img src={item.Imagen_URL} alt={item.Nombre_Producto} className="banner-image" />
                   </Link>
                   <div className="banner-content">
@@ -91,16 +90,21 @@ const Banner = ({ categoria, title, sliderSettings, noDataMessage, showNotificat
                 </div>
               ) : (
                 <div className="banner-product">
-                  <Link to={`/comprar/${item.ID_Producto}`}>
+                  <Link to={`/comprar/${item.ID_Producto}`} className="banner-image-link">
                     <img src={item.Imagen_URL} alt={item.Nombre_Producto} className="banner-image" />
                   </Link>
-                  <div className="banner-product-price">${item.Precio} MXN</div>
                   <h3 className="banner-item-title">{item.Nombre_Producto}</h3>
+                  <div className="banner-product-price">${item.Precio} MXN</div>
                   <div className="banner-buttons">
                     <Link to={`/comprar/${item.ID_Producto}`} className="banner-buy-button">Comprar Ahora</Link>
                     <button
+                      type="button"
                       className="banner-cart-button"
-                      onClick={() => addToCart(item)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        addToCart(item);
+                      }}
                     >
                       Añadir al Carrito
                     </button>
@@ -126,7 +130,7 @@ const Tienda = () => {
   };
 
   const promocionSettings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
@@ -136,6 +140,9 @@ const Tienda = () => {
     centerMode: true,
     centerPadding: '20%',
     arrows: true,
+    swipe: true,
+    swipeToSlide: true,
+    touchThreshold: 10,
     responsive: [
       {
         breakpoint: 768,
@@ -143,28 +150,33 @@ const Tienda = () => {
           centerPadding: '0',
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false // Desactivar flechas en móviles
+          arrows: true,
+          dots: true
         }
       }
     ]
   };
 
   const ofertaSettings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 600,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: true,
+    swipe: true,
+    swipeToSlide: true,
+    touchThreshold: 10,
     responsive: [
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-          arrows: false
+          slidesToScroll: 1,
+          arrows: true,
+          dots: true
         }
       },
       {
@@ -172,7 +184,8 @@ const Tienda = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false
+          arrows: true,
+          dots: true
         }
       }
     ]

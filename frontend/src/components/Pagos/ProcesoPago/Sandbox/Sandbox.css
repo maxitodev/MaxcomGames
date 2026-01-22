@@ -1,109 +1,211 @@
-/* Sandbox.css */
+/* ========================================
+   SANDBOX - DISEÑO MINIMALISTA MODERNO
+   ======================================== */
 
 .sandbox-page {
-    margin-top: 5%;
-    min-height: 10vh;
-    padding: 2em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #ffffff;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px;
+  margin-top: 120px;
+  margin-bottom: 60px;
+  font-family: 'Inter', sans-serif;
+}
+
+.sandbox-page h2 {
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 32px;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 28px;
+}
+
+.test-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.credential-section {
+  background: rgba(10, 10, 10, 0.6);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.credential-section h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #00ffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.credential-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.credential-section li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  gap: 12px;
+}
+
+.credential-section li:last-child {
+  border-bottom: none;
+}
+
+.credential-section li span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.credential-section code {
+  background: rgba(0, 255, 255, 0.08);
+  color: #00ffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-size: 12px;
+  word-break: break-all;
+  flex-shrink: 0;
+}
+
+.credential-section button {
+  background: #00ffff;
+  color: #000;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.credential-section button:hover {
+  background: #00e6e6;
+  transform: translateY(-1px);
+}
+
+.disclaimer {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  line-height: 1.5;
+}
+
+.copy-notification {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00ffff;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3);
+  z-index: 1000;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .sandbox-page {
+    margin-top: 90px;
+    padding: 0 16px;
+  }
+
+  .sandbox-page h2 {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+  }
+
   .container {
-    max-width: 800px;
-    margin: 0 auto; /* Centra el contenedor en la pantalla */
-    background: #1a1a1a;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
   }
-  
-  h2 {
-    font-size: 1.8rem;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-    text-align: center; /* Alinea el título a la izquierda */
-  }
-  
-  .test-credentials {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start; /* Asegura que todo el contenido esté alineado a la izquierda */
-  }
-  
+
   .credential-section {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    background: #131313;
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    padding: 16px;
   }
-  
-  .credential-section h4 {
-    font-size: 1.2rem;
-    color: #00ffff;
-    margin-bottom: 0.8rem;
-    text-align: left; /* Alinea los subtítulos a la izquierda */
-  }
-  
-  .credential-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%; /* Asegura que la lista ocupe todo el ancho */
-  }
-  
+
   .credential-section li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.6rem;
-    width: 100%; /* Asegura que cada elemento de la lista ocupe todo el ancho */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
-  
+
   .credential-section code {
-    background: #f0f0f0;
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9rem;
-    color: #000000;
-    word-break: break-all; /* Maneja texto largo sin romper el diseño */
+    width: 100%;
+    text-align: center;
   }
-  
+
   .credential-section button {
-    background: #00e1ff;
-    color: #000000;
-    border: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.3s ease;
+    width: 100%;
+    padding: 10px;
   }
-  
-  .credential-section button:hover {
-    background: #00eeff;
+}
+
+@media (max-width: 480px) {
+  .sandbox-page {
+    margin-top: 80px;
+    padding: 0 12px;
   }
-  
-  .disclaimer {
-    font-size: 0.9rem;
-    color: #ffffff;
-    margin-top: 1.5rem;
-    text-align: left; /* Alinea el aviso legal a la izquierda */
+
+  .container {
+    padding: 16px;
+    border-radius: 14px;
   }
-  
+
+  .credential-section {
+    padding: 14px;
+  }
+
+  .credential-section h4 {
+    font-size: 13px;
+  }
+
+  .credential-section code {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+
   .copy-notification {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #00eeff;
-    color: #000000;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem;
-    z-index: 1000;
+    bottom: 16px;
+    padding: 10px 20px;
+    font-size: 12px;
   }
+}

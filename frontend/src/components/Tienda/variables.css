@@ -1,12 +1,47 @@
 :root {
+    /* Colores principales */
     --primary-color: #00ffff;
-    --secondary-color: #00ffff;
-    --background-color: #121212;
-    --navbar-color: #1e1e1e;
+    --primary-dark: #00d4d4;
+    --primary-light: #66ffff;
+    --secondary-color: #00e1ff;
+    
+    /* Fondos */
+    --background-color: #0a0a0a;
+    --surface-color: #141414;
+    --surface-elevated: #1a1a1a;
+    --navbar-color: #0d0d0d;
+    
+    /* Texto */
     --text-color-light: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-muted: rgba(255, 255, 255, 0.5);
+    
+    /* Bordes */
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(0, 255, 255, 0.3);
+    
+    /* Efectos */
     --button-hover-color: #00ffff;
+    --glow-primary: 0 0 20px rgba(0, 255, 255, 0.15);
+    --glow-strong: 0 0 30px rgba(0, 255, 255, 0.25);
+    
+    /* Tipografía */
     --font-size-base: 1rem;
-    --font-family: 'Roboto', sans-serif;
-    --shadow-light: 0 2px 4px rgba(255, 255, 255, 0.3);
-    --shadow-heavy: 0 4px 8px rgba(0, 0, 0, 0.5);
+    --font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Sombras minimalistas */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+    
+    /* Transiciones */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.25s ease;
+    --transition-slow: 0.4s ease;
+    
+    /* Bordes redondeados */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
   }

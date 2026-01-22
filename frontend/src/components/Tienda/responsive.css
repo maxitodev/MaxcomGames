@@ -1,17 +1,23 @@
+/* ========================================
+   RESPONSIVE STYLES - TIENDA
+   Estilos responsivos adicionales para banners
+   ======================================== */
+
 /* Ajustes generales para móviles */
 @media (max-width: 768px) {
   .banner-container {
-    padding: 0 1rem;
+    padding: 0 16px;
   }
 
   .banner-image {
     width: 100%;
     height: auto;
+    border-radius: 12px;
   }
 
   .banner-product {
-    padding: 10px;
-    margin: 5px 0;
+    padding: 14px;
+    margin: 8px 0;
   }
 
   .banner-product-price {
@@ -19,7 +25,7 @@
   }
 
   .banner-item-title {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .banner-buttons {
@@ -30,40 +36,65 @@
   .banner-buy-button,
   .banner-cart-button {
     width: 100%;
-    padding: 8px;
+    padding: 11px;
+    font-size: 13px;
+    border-radius: 8px;
   }
 
   .banner-slide {
-    padding: 0;
+    padding: 0 8px;
   }
 
   .slick-prev,
   .slick-next {
-    display: none;
+    display: none !important;
+  }
+
+  .banner-title,
+  .banner-title-button {
+    font-size: 1.4rem !important;
+    padding: 12px 36px !important;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .banner-container {
+    padding: 0 12px;
+  }
+
+  .banner-product {
+    padding: 12px;
+  }
+
+  .banner-product-price {
+    font-size: 12px;
+  }
+
+  .banner-item-title {
+    font-size: 14px;
+  }
+
+  .banner-buy-button,
+  .banner-cart-button {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .banner-title,
+  .banner-title-button {
+    font-size: 1.1rem !important;
+    padding: 10px 28px !important;
   }
 }
 
 /* Para tablets (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .banner-container {
-    padding: 0 2rem;
+    padding: 0 20px;
   }
 
   .banner-product {
-    padding: 15px;
+    padding: 16px;
   }
-}
-
-/* Estilos específicos para el carrito lateral */
-.sidebar-cart {
-  position: fixed;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 80%;
-  max-width: 300px;
-  background: white;
-  padding: 1rem;
-  overflow-y: auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }

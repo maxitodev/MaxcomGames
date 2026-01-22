@@ -1,126 +1,270 @@
+/* ========================================
+   OFERTAS - DISEÑO MINIMALISTA MODERNO
+   ======================================== */
+
 .ofertas-container {
-    max-width: 1300px;
-    margin-top: 10px;
-    margin: 2rem auto;
-    padding: 0 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ofertas-titulo {
+  margin-top: 100px;
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 50px;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.ofertas-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+  border-radius: 2px;
+}
+
+/* Grid de productos */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 8px;
+}
+
+/* Card de producto */
+.producto-card {
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.producto-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 255, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen del producto */
+.producto-imagen {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.producto-card:hover .producto-imagen {
+  transform: scale(1.03);
+}
+
+/* Info del producto */
+.producto-info {
+  padding: 20px;
+}
+
+.producto-nombre {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  min-height: 44px;
+  line-height: 1.4;
+}
+
+/* Precio */
+.producto-precio {
+  color: #00ffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.descuento-tag {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+/* Botones */
+.producto-botones {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.comprar-button {
+  flex: 1;
+  background: #00ffff;
+  color: #000;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.comprar-button:hover {
+  background: #00e6e6;
+  transform: translateY(-1px);
+}
+
+.carrito-button {
+  flex: 1;
+  background: transparent;
+  color: #00ffff;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.carrito-button:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.5);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .ofertas-container {
+    padding: 0 16px;
   }
-  
+
   .ofertas-titulo {
-    margin-top: 10%;
-    text-align: center;
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    margin-top: 80px;
+    margin-bottom: 40px;
   }
-  
+
+  .ofertas-titulo::after {
+    width: 50px;
+    bottom: -10px;
+  }
+
   .productos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 4px;
   }
-  
+
   .producto-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
   }
-  
-  .producto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  }
-  
+
   .producto-imagen {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-bottom: 2px solid rgba(255,255,255,0.1);
+    height: 180px;
   }
-  
+
   .producto-info {
-    padding: 1.5rem;
+    padding: 16px;
   }
-  
+
   .producto-nombre {
-    color: #fff;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    min-height: 60px;
+    font-size: 14px;
+    min-height: 40px;
   }
-  
+
   .producto-precio {
-    color: #00ffff;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    font-size: 1.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
-  
-  .descuento-tag {
-    background: #ff4757;
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-  }
-  
+
   .producto-botones {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  .comprar-button {
-    flex: 1;
-    background: #00f7ff;
-    color: #000;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
-  .comprar-button:hover {
-    background: #00e1e9;
-    transform: scale(1.05);
-  }
-  
+
+  .comprar-button,
   .carrito-button {
-    flex: 1;
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-    padding: 0.8rem;
-    border: 2px solid #00f7ff;
+    padding: 11px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ofertas-container {
+    padding: 0 12px;
+  }
+
+  .ofertas-titulo {
+    margin-top: 70px;
+    margin-bottom: 32px;
+  }
+
+  .ofertas-titulo::after {
+    width: 40px;
+    height: 2px;
+    bottom: -8px;
+  }
+
+  .productos-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .producto-card {
+    border-radius: 12px;
+  }
+
+  .producto-imagen {
+    height: 200px;
+  }
+
+  .producto-info {
+    padding: 14px;
+  }
+
+  .producto-nombre {
+    font-size: 14px;
+    min-height: auto;
+    margin-bottom: 10px;
+  }
+
+  .producto-precio {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .descuento-tag {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .producto-botones {
+    gap: 8px;
+  }
+
+  .comprar-button,
+  .carrito-button {
+    padding: 12px 14px;
     border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
   }
-  
-  .carrito-button:hover {
-    background: #00f7ff20;
-    transform: scale(1.05);
-  }
-  
-  @media (max-width: 768px) {
-    .productos-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .ofertas-titulo {
-      font-size: 2rem;
-    }
-  }
+}

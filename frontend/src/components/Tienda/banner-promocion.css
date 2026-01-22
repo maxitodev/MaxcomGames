@@ -1,9 +1,15 @@
+/* ========================================
+   BANNER PROMOCIÓN - REDISEÑO MINIMALISTA
+   ======================================== */
+
 .promoción-container {
-  padding: 0px;
-  border-radius: 0px;
-  margin-top: 18px;
+  padding: 0;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Slide del banner */
 .promoción-container .banner-slide {
   display: flex;
   justify-content: center;
@@ -12,166 +18,390 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.promoción-container .banner-slide:hover {
-  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.5);
-}
-
+/* Imagen del banner */
 .promoción-container .banner-image {
   width: 100%;
-  height: calc(800px - 350px);
+  height: clamp(320px, 55vh, 520px);
   object-fit: cover;
   object-position: center;
-  transition: filter 0.3s ease, transform 0.3s ease;
-  opacity: 0.3;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0.35;
 }
 
 .promoción-container .slick-center .banner-image {
-  filter: brightness(1.0);
   opacity: 1;
+  transform: scale(1.01);
 }
 
+/* Gradiente superpuesto para legibilidad */
+.promoción-container .banner-slide::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Contenido del banner */
 .promoción-container .banner-content {
   position: absolute;
-  bottom: 10%;
-  left: 3%;
-  width: 80%;
+  bottom: 12%;
+  left: 5%;
+  width: 60%;
+  max-width: 550px;
   text-align: left;
-  color: var(--text-color-light);
-  padding: 20px;
-  border-radius: 12px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  color: #fff;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
+  border: none;
+  z-index: 10;
+  pointer-events: auto;
 }
 
-/* Mejoras en el botón "Comprar ahora" */
+/* Inner del slide */
+.promoción-container .banner-slide-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Link de imagen */
+.promoción-container .banner-image-link {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Título del banner */
+.promoción-container .banner-content h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Precio */
+.promoción-container .banner-content .banner-price-label {
+  margin-top: 8px;
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 600;
+  color: #00ffff;
+  text-shadow: 0 2px 15px rgba(0, 255, 255, 0.3);
+}
+
+/* Botón comprar - SIN FONDO NEGRO */
 .promoción-container .banner-button {
-  display: inline-block;
-  padding: 15px 35px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background: radial-gradient(circle, #00e6e6 0%, #00b3b3 100%);
-  color: var(--text-color-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  background: #00ffff;
+  color: #000;
   text-decoration: none;
-  border-radius: 30px;
-  border: 2px solid #00ffff;
-  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5);
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  border: none;
+  transition: all 0.25s ease;
   cursor: pointer;
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+  position: relative;
+  z-index: 20;
+  pointer-events: auto;
 }
 
 .promoción-container .banner-button:hover {
-  background: radial-gradient(circle, #00ffea 0%, #00e6e6 100%);
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.8);
-  border-color: #00e6e6;
+  background: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.4);
 }
 
-.promoción-container .banner-content .banner-price-label {
-  margin-top: 5px;
-  font-size: 1.4rem;
-  font-style: italic;
-  color: #00e6e6;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+.promoción-container .banner-button:active {
+  transform: translateY(-1px);
 }
 
-/* Estilos para las flechas de navegación */
+/* Flechas de navegación - ESTÁTICAS */
 .promoción-container .slick-prev,
 .promoción-container .slick-next {
-  width: 40px;
-  height: 40px;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 50%;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-  backdrop-filter: blur(5px);
+  transition: background 0.25s ease, border-color 0.25s ease;
+  border: 2px solid rgba(0, 255, 255, 0.4);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translateY(-50%);
+}
+
+.promoción-container .slick-prev {
+  left: 16px;
+}
+
+.promoción-container .slick-next {
+  right: 16px;
 }
 
 .promoción-container .slick-prev:hover,
 .promoción-container .slick-next:hover {
-  background: rgba(0, 255, 255, 0.8);
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+  background: rgba(0, 255, 255, 0.25);
+  border-color: #00ffff;
 }
 
 .promoción-container .slick-prev:before,
 .promoción-container .slick-next:before {
   content: '';
   position: absolute;
-  width: 12px;
-  height: 12px;
-  border-top: 2px solid #00ffff;
-  border-right: 2px solid #00ffff;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #00ffff;
+  border-right: 3px solid #00ffff;
   top: 50%;
   left: 50%;
-  margin-top: -6px;
-  margin-left: -6px;
+}
+
+.promoción-container .slick-prev:before {
+  transform: translate(-30%, -50%) rotate(-135deg);
+}
+
+.promoción-container .slick-next:before {
+  transform: translate(-70%, -50%) rotate(45deg);
+}
+
+/* Dots de navegación */
+.promoción-container .slick-dots {
+  bottom: 24px;
+}
+
+.promoción-container .slick-dots li {
+  margin: 0 4px;
+}
+
+.promoción-container .slick-dots li button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+}
+
+.promoción-container .slick-dots li button:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  opacity: 1;
   transition: all 0.3s ease;
 }
 
-/* Flecha izquierda (apunta a la izquierda) */
-.promoción-container .slick-prev:before {
-  transform: rotate(-135deg); /* Gira para apuntar a la izquierda */
+.promoción-container .slick-dots li.slick-active button:before {
+  background: #00ffff;
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
 }
 
-/* Flecha derecha (apunta a la derecha) */
-.promoción-container .slick-next:before {
-  transform: rotate(45deg); /* Gira para apuntar a la derecha */
+/* ========================================
+   RESPONSIVE - TABLET
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .promoción-container .banner-image {
+    height: clamp(280px, 48vh, 450px);
+  }
+
+  .promoción-container .banner-content {
+    width: 70%;
+    bottom: 10%;
+  }
+
+  .promoción-container .slick-prev,
+  .promoción-container .slick-next {
+    width: 44px;
+    height: 44px;
+  }
 }
 
-.promoción-container .slick-prev:hover:before,
-.promoción-container .slick-next:hover:before {
-  border-color: #fff;
-  transform: rotate(-135deg) scale(1.2); /* Mantiene la dirección al hacer hover */
+/* ========================================
+   RESPONSIVE - MÓVIL
+   ======================================== */
+
+@media (max-width: 768px) {
+  .promoción-container .banner-image {
+    height: clamp(260px, 42vh, 380px);
+  }
+
+  .promoción-container .banner-content {
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15%;
+    text-align: center;
+  }
+
+  .promoción-container .banner-content h2 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+  }
+
+  .promoción-container .banner-content .banner-price-label {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+  }
+
+  .promoción-container .banner-button {
+    padding: 13px 28px;
+    font-size: 13px;
+    margin-top: 20px;
+  }
+
+  .promoción-container .slick-prev,
+  .promoción-container .slick-next {
+    width: 44px;
+    height: 44px;
+    display: flex !important;
+  }
+
+  .promoción-container .slick-prev:before,
+  .promoción-container .slick-next:before {
+    width: 10px;
+    height: 10px;
+    border-width: 2px;
+  }
+
+  .promoción-container .slick-prev {
+    left: 12px;
+  }
+
+  .promoción-container .slick-next {
+    right: 12px;
+  }
+
+  .promoción-container .slick-dots {
+    bottom: 16px;
+  }
 }
 
-.promoción-container .slick-next:hover:before {
-  transform: rotate(45deg) scale(1.2); /* Mantiene la dirección al hacer hover */
+/* ========================================
+   RESPONSIVE - MÓVIL PEQUEÑO
+   ======================================== */
+
+@media (max-width: 480px) {
+  .promoción-container .banner-image {
+    height: clamp(220px, 38vh, 320px);
+  }
+
+  .promoción-container .banner-content {
+    width: 90%;
+    bottom: 12%;
+  }
+
+  .promoción-container .banner-content h2 {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+
+  .promoción-container .banner-content .banner-price-label {
+    font-size: 1rem;
+  }
+
+  .promoción-container .banner-button {
+    padding: 12px 24px;
+    font-size: 12px;
+    margin-top: 16px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .promoción-container .slick-prev,
+  .promoción-container .slick-next {
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+  }
+
+  .promoción-container .slick-prev:before,
+  .promoción-container .slick-next:before {
+    width: 9px;
+    height: 9px;
+    border-width: 2px;
+  }
+
+  .promoción-container .slick-prev {
+    left: 8px;
+  }
+
+  .promoción-container .slick-next {
+    right: 8px;
+  }
+
+  .promoción-container .slick-dots li button:before {
+    width: 8px;
+    height: 8px;
+  }
 }
 
-.promoción-container .slick-prev {
-  left: 15px;
-}
+/* ========================================
+   RESPONSIVE - MÓVIL MUY PEQUEÑO
+   ======================================== */
 
-.promoción-container .slick-next {
-  right: 15px;
-}
+@media (max-width: 360px) {
+  .promoción-container .banner-image {
+    height: clamp(180px, 35vh, 260px);
+  }
 
-/* Efecto de brillo al pasar el mouse */
-.promoción-container .slick-prev:after,
-.promoción-container .slick-next:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 255, 255, 0.4), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+  .promoción-container .banner-content {
+    bottom: 10%;
+  }
 
-.promoción-container .slick-prev:hover:after,
-.promoción-container .slick-next:hover:after {
-  opacity: 1;
-}
+  .promoción-container .banner-content h2 {
+    font-size: 1rem;
+  }
 
-/* Animación de pulso en estado normal */
-@keyframes arrowPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
+  .promoción-container .banner-content .banner-price-label {
+    font-size: 0.9rem;
+  }
 
-.promoción-container .slick-prev,
-.promoción-container .slick-next {
-  animation: arrowPulse 2s infinite;
-}
+  .promoción-container .banner-button {
+    padding: 11px 20px;
+    font-size: 11px;
+    border-radius: 10px;
+  }
 
-.promoción-container .slick-prev:hover,
-.promoción-container .slick-next:hover {
-  animation: none;
+  .promoción-container .slick-prev,
+  .promoción-container .slick-next {
+    width: 36px;
+    height: 36px;
+    display: flex !important;
+  }
+
+  .promoción-container .slick-prev:before,
+  .promoción-container .slick-next:before {
+    width: 8px;
+    height: 8px;
+  }
+
+  .promoción-container .slick-prev {
+    left: 6px;
+  }
+
+  .promoción-container .slick-next {
+    right: 6px;
+  }
 }

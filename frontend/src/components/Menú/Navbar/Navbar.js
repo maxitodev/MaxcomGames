@@ -162,15 +162,22 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Navbar Superior */}
       <nav className="navbar">
         <div className="navbar-left">
-          <button className="menu-button" onClick={toggleMenu}>☰</button>
+          {/* Menú hamburguesa animado */}
+          <button 
+            className={`menu-button ${isMenuOpen ? 'active' : ''}`} 
+            onClick={toggleMenu} 
+            aria-label="Menú"
+            aria-expanded={isMenuOpen}
+          >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
           <div className="logo" onClick={goToHome} style={{ cursor: 'pointer' }}>
-            <img 
-              src={logo} // Usa la variable importada
-              alt="Logo" 
-              style={{ height: '40px', width: 'auto' }} // Ajusta el tamaño según sea necesario
-            />
+            <img src={logo} alt="Logo" />
           </div>
         </div>
         <div className="navbar-center">
@@ -178,7 +185,7 @@ const Navbar = () => {
             <input
               type="text"
               className="search-bar"
-              placeholder="Buscar..."
+              placeholder="Buscar productos..."
               value={searchTerm}
               onChange={(e) => {
                 const val = e.target.value;
@@ -188,28 +195,64 @@ const Navbar = () => {
                 }
               }}
               onKeyDown={(e) => { if (e.key === 'Enter') handleSearch(); }}
+              aria-label="Buscar productos"
             />
-            <button className="search-button" onClick={handleSearch}>
-              <img src={SearchIcon} alt="Buscar" />
+            <button className="search-button" onClick={handleSearch} aria-label="Buscar">
+              <img src={SearchIcon} alt="" />
             </button>
           </div>
         </div>
         <div className="navbar-right">
           {isLoggedIn ? (
-            <button className="icon-button" onClick={handleLogout}>Cerrar Sesión</button>
+            <button className="icon-button" onClick={handleLogout}>Salir</button>
           ) : (
-            <button className="icon-button" onClick={togglePopup}>Iniciar Sesión</button>
+            <button className="icon-button" onClick={togglePopup}>Ingresar</button>
           )}
-          <button className="icon-button" onClick={handleMisPedidosClick}>Mis Pedidos</button>
+          <button className="icon-button" onClick={handleMisPedidosClick}>Pedidos</button>
           <button className="icon-button" onClick={handleCartClick}>
             <div style={{ position: 'relative', display: 'inline-block' }}>
-              <img src={CartIcon} alt="Carrito" style={{ height: '32px', width: '32px' }} />
-              <span className="cart-counter">{cartCount > 99 ? '+99' : cartCount}</span>
+              <img src={CartIcon} alt="" />
+              {cartCount > 0 && <span className="cart-counter">{cartCount > 99 ? '99+' : cartCount}</span>}
             </div>
             <span className="cart-text">Carrito</span>
           </button>
         </div>
       </nav>
+
+      {/* Navegación Inferior Móvil */}
+      <nav className="mobile-bottom-nav" aria-label="Navegación principal">
+        <div className="nav-items">
+          <button className="nav-item" onClick={goToHome} aria-label="Inicio">
+            <span className="nav-icon">🏠</span>
+            <span>Inicio</span>
+          </button>
+          <button className="nav-item" onClick={toggleMenu} aria-label="Explorar categorías">
+            <span className="nav-icon">☰</span>
+            <span>Menú</span>
+          </button>
+          <button className="nav-item" onClick={handleMisPedidosClick} aria-label="Mis pedidos">
+            <span className="nav-icon">📦</span>
+            <span>Pedidos</span>
+          </button>
+          <button className="nav-item" onClick={handleCartClick} aria-label="Carrito de compras" style={{ position: 'relative' }}>
+            <span className="nav-icon">🛒</span>
+            <span>Carrito</span>
+            {cartCount > 0 && <span className="cart-badge">{cartCount > 99 ? '99+' : cartCount}</span>}
+          </button>
+          {isLoggedIn ? (
+            <button className="nav-item" onClick={handleLogout} aria-label="Cerrar sesión">
+              <span className="nav-icon">👤</span>
+              <span>Salir</span>
+            </button>
+          ) : (
+            <button className="nav-item" onClick={togglePopup} aria-label="Iniciar sesión">
+              <span className="nav-icon">👤</span>
+              <span>Ingresar</span>
+            </button>
+          )}
+        </div>
+      </nav>
+
       <div ref={popupRef}>
         <LoginPopup isOpen={isPopupOpen} togglePopup={togglePopup} />
       </div>

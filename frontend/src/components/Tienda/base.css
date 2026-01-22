@@ -1,81 +1,138 @@
+/* ========================================
+   BASE - DISEÑO MINIMALISTA MODERNO
+   Estilos base para la tienda
+   ======================================== */
+
 body {
-    font-family: var(--font-family);
-    background-color: var(--background-color);
-    color: var(--text-color-light);
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color-light);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-  
+
+/* Mensaje sin datos */
 .no-data-message {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-top: 40px;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Texto post-banner */
 .texto-post-banner {
-    text-align: center; /* Centra el texto horizontalmente */
-    margin: 40px auto; /* Añade espacio arriba y abajo */
-    padding: 0;
-    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  text-align: center;
+  margin: 60px auto 40px;
+  padding: 0 20px;
+  width: 100%;
 }
-  
+
 .texto-post-banner h3 {
-    font-size: 5rem; /* Tamaño de fuente más grande */
-    font-weight: bold; /* Texto en negrita */
-    color: #FFFFFF; /* Color blanco para contraste */
-    margin-bottom: -2%; /* Elimina márgenes adicionales */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Sombra para mejorar la legibilidad */
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0;
+  letter-spacing: -0.02em;
 }
 
-
-
-/* Animación para entrada y salida */
-@keyframes fadeInOut {
-    0%, 100% {
-        opacity: 0;
-        transform: translate(-50%, -10px);
-    }
-    10%, 90% {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
-}
-
+/* Notificación */
 .notification-message {
-    position: fixed;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #4bca2c; /* Color naranja vibrante para mayor contraste */
-    color: #fff; /* Texto blanco para máximo contraste */
-    padding: 18px 32px; /* Aumentado el padding para que sea más prominente */
-    border-radius: 12px; /* Radio de borde más grande para suavidad */
-    z-index: 1000;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada para destacar */
-    font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
-    font-size: 16px; /* Tamaño de fuente aumentado para mayor visibilidad */
-    font-weight: 500; /* Peso de fuente semibold para resaltar el texto */
-    line-height: 1.4; /* Mejora la legibilidad */
-    letter-spacing: 0.5px; /* Espaciado entre letras para un look profesional */
-    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
-    max-width: 400px; /* Ancho máximo ajustado para evitar mensajes demasiado largos */
-    text-align: center; /* Centra el texto dentro del contenedor */
-    animation: fadeInOut 4s ease-in-out forwards; /* Animación más lenta para captar atención */
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 255, 255, 0.95);
+  color: #000;
+  padding: 14px 28px;
+  border-radius: 12px;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+  white-space: normal;
+  max-width: 90%;
+  text-align: center;
+  animation: slideInNotification 0.3s ease, fadeOutNotification 0.3s ease 3.5s forwards;
 }
 
-/* Animación para entrada y salida */
-@keyframes fadeInOut {
-    0%, 100% {
-        opacity: 0;
-        transform: translate(-50%, -20px);
-    }
-    10%, 90% {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
+@keyframes slideInNotification {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes fadeOutNotification {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+}
+
+/* Notificación de éxito */
+.notification-message.success {
+  background: rgba(75, 202, 44, 0.95);
+}
+
+/* Notificación de error */
+.notification-message.error {
+  background: rgba(255, 100, 100, 0.95);
+  color: #fff;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .no-data-message {
+    font-size: 1.1rem;
+    padding: 30px 16px;
+    margin-top: 30px;
+  }
+
+  .texto-post-banner {
+    margin: 40px auto 30px;
+  }
+
+  .notification-message {
+    top: 76px;
+    padding: 12px 20px;
+    font-size: 13px;
+    max-width: 85%;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .no-data-message {
+    font-size: 1rem;
+    padding: 24px 14px;
+  }
+
+  .texto-post-banner {
+    margin: 30px auto 24px;
+  }
+
+  .notification-message {
+    top: 66px;
+    padding: 10px 16px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
 }

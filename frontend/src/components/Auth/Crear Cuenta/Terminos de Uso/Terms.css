@@ -1,78 +1,141 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #121212; /* Fondo oscuro */
-    color: #ffffff; /* Texto claro */
-    margin: 0;
-    padding: 0;
-  }
-  
+/* ========================================
+   TÉRMINOS DE USO - DISEÑO MINIMALISTA MODERNO
+   ======================================== */
+
+.terms-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+  margin-top: 120px;
+  margin-bottom: 60px;
+  font-family: 'Inter', sans-serif;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: transparent;
+  color: #00ffff;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  margin-bottom: 32px;
+}
+
+.back-button:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.5);
+}
+
+.terms-container h2 {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+.terms-text {
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 32px;
+}
+
+.terms-text p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.terms-text p:last-child {
+  margin-bottom: 0;
+}
+
+.terms-text strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.terms-container a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.terms-container a:hover {
+  color: #00e6e6;
+  text-decoration: underline;
+}
+
+.terms-container hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 24px 0;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
   .terms-container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #1e1e1e; /* Fondo oscuro más claro */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border: 1px solid #333;
+    margin-top: 90px;
+    padding: 0 16px;
   }
-  
-  .terms-container h2 {
-    font-size: 28px;
-    color: #00bcd4; /* Azul brillante */
-    margin-bottom: 20px;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  
-  .terms-text {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #ffffff; /* Texto en gris claro para mejor legibilidad */
-  }
-  
-  .terms-text p {
-    margin-bottom: 15px;
-  }
-  
-  .terms-container a {
-    color: #00bcd4;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .terms-container a:hover {
-    color: #0097a7; /* Azul más oscuro */
-  }
-  
+
   .back-button {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    background-color: #00bcd4;
-    color: #121212;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    font-size: 20px; /* Incrementa el tamaño de la fuente */
+    padding: 10px 16px;
+    font-size: 13px;
+    margin-bottom: 24px;
   }
-  
-  .back-button:hover {
-    background-color: #0097a7;
+
+  .terms-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
   }
-  
-  .terms-container hr {
-    border: none;
-    border-top: 1px solid #333;
-    margin: 20px 0;
+
+  .terms-text {
+    padding: 24px;
   }
-  
-  footer {
-    margin-top: 30px;
-    text-align: center;
+
+  .terms-text p {
     font-size: 14px;
-    color: #777;
+    line-height: 1.7;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .terms-container {
+    margin-top: 80px;
+    padding: 0 12px;
+  }
+
+  .back-button {
+    padding: 9px 14px;
+    font-size: 12px;
+  }
+
+  .terms-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .terms-text {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .terms-text p {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+}

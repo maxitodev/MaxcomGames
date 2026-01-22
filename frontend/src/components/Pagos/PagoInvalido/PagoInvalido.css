@@ -1,32 +1,136 @@
+/* ========================================
+   PAGO INVÁLIDO - DISEÑO MINIMALISTA MODERNO
+   ======================================== */
+
 .error-container {
-    margin-top: 5%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 24px;
   text-align: center;
-  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  margin-top: 140px;
+}
+
+.error-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: rgba(255, 70, 70, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
 }
 
 .error-container h1 {
-  color: red;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: #ff4646;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
 }
 
 .error-container p {
-  margin: 10px 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin-bottom: 12px;
 }
 
 .error-buttons {
-  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 32px;
 }
 
 .error-button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  background-color: #f44336;
-  color: white;
+  padding: 12px 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
 
-.error-button:hover {
-  background-color: #d32f2f;
+.error-button:first-child {
+  background: #ff4646;
+  color: #fff;
+}
+
+.error-button:first-child:hover {
+  background: #e63c3c;
+  transform: translateY(-2px);
+}
+
+.error-button:last-child {
+  background: transparent;
+  color: #ff4646;
+  border: 1px solid rgba(255, 70, 70, 0.3);
+}
+
+.error-button:last-child:hover {
+  background: rgba(255, 70, 70, 0.1);
+  border-color: rgba(255, 70, 70, 0.5);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .error-container {
+    margin-top: 100px;
+    padding: 0 20px;
+  }
+
+  .error-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+  }
+
+  .error-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .error-buttons {
+    flex-direction: column;
+  }
+
+  .error-button {
+    width: 100%;
+    padding: 14px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-container {
+    margin-top: 90px;
+    padding: 0 16px;
+  }
+
+  .error-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .error-container h1 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .error-container p {
+    font-size: 13px;
+  }
+
+  .error-button {
+    padding: 12px 18px;
+    font-size: 13px;
+  }
 }

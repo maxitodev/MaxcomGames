@@ -1,75 +1,297 @@
-/* Contenedor principal del popup */
-.login-popup {
-  position: absolute;
-  top: 5%;
-  right: 14%;
-  width: 200px;
-  background-color: #1e1e1e;
-  border: 1px solid #333;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  z-index: 1000;
+/* ========================================
+   LOGIN PANEL - DISEÑO MODERNO ACCESIBLE
+   ======================================== */
+
+/* Overlay oscuro */
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.login-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Panel principal */
+.login-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 380px;
+  max-width: 100%;
+  height: 100vh;
+  background: #0a0a0a;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -10px 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.login-panel.active {
+  right: 0;
+}
+
+/* Header del panel */
+.login-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.login-panel-header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
   color: #fff;
-  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  letter-spacing: -0.02em;
 }
 
-/* Botón de cierre */
-.close-popup {
-  position: absolute;
-  top: -3px;
-  right: 10px;
-  background: none;
+.close-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
   border: none;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
-  font-size: 18px;
-  color: #ff5f5f;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: all 0.2s ease;
 }
 
-.close-popup:hover {
-  transform: scale(1.2);
-  color: #ff3b3b;
+.close-panel:hover {
+  background: rgba(255, 100, 100, 0.1);
+  color: #ff6464;
 }
 
-/* Estilos base para los botones del popup */
-.popup-button {
+/* Contenido del panel */
+.login-panel-content {
+  flex: 1;
+  padding: 32px 28px;
+  overflow-y: auto;
+}
+
+.login-panel-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Botones del panel */
+.login-panel-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.panel-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   width: 100%;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 18px 20px;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 14px;
   cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.25s ease;
+  text-align: left;
 }
 
-/* Estado normal de los botones */
-.popup-button {
-  background: linear-gradient(135deg, #00eeff, #00eeff);
-  color: #121212;
+.panel-btn.primary {
+  background: linear-gradient(135deg, #00ffff 0%, #00e6e6 100%);
+  color: #000;
 }
 
-/* Hover: efecto de elevación y cambio de color */
-.popup-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+.panel-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 255, 255, 0.3);
 }
 
-/* Active: efecto de presión */
-.popup-button:active {
-  transform: translateY(2px);
-  background: #005e63;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.panel-btn.secondary {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
-/* Ajustes específicos para el primer y último botón */
-.popup-button:first-of-type {
-  margin-top: 0;
+.panel-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
-.popup-button:last-of-type {
-  margin-bottom: 0;
+.panel-btn .btn-icon {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.panel-btn.secondary .btn-icon {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.panel-btn .btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.panel-btn .btn-text strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.panel-btn .btn-text small {
+  font-size: 12px;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+/* Footer del panel */
+.login-panel-footer {
+  padding: 20px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.login-panel-footer p {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.login-panel-footer a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.login-panel-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE - MÓVIL
+   ======================================== */
+
+@media (max-width: 768px) {
+  .login-panel {
+    width: 100%;
+    right: -100%;
+    top: auto;
+    bottom: 0;
+    height: auto;
+    max-height: 85vh;
+    border-radius: 24px 24px 0 0;
+    transform: translateY(100%);
+    right: 0;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .login-panel.active {
+    transform: translateY(0);
+  }
+
+  .login-panel-header {
+    padding: 20px 24px;
+    position: relative;
+  }
+
+  .login-panel-header::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+  }
+
+  .login-panel-header h2 {
+    font-size: 1.3rem;
+    margin-top: 8px;
+  }
+
+  .login-panel-content {
+    padding: 24px;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0));
+  }
+
+  .login-panel-subtitle {
+    margin-bottom: 24px;
+  }
+
+  .login-panel-buttons {
+    gap: 12px;
+  }
+
+  .panel-btn {
+    padding: 16px 18px;
+    border-radius: 12px;
+  }
+
+  .panel-btn .btn-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .panel-btn .btn-text strong {
+    font-size: 14px;
+  }
+
+  .login-panel-footer {
+    padding: 16px 24px;
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0));
+  }
+}
+
+@media (max-width: 480px) {
+  .login-panel {
+    max-height: 90vh;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .login-panel-header {
+    padding: 18px 20px;
+  }
+
+  .login-panel-content {
+    padding: 20px;
+  }
+
+  .close-panel {
+    width: 36px;
+    height: 36px;
+  }
+
+  .close-panel svg {
+    width: 20px;
+    height: 20px;
+  }
 }

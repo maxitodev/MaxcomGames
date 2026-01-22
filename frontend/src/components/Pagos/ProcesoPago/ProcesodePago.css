@@ -1,390 +1,301 @@
-/* Animaciones */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
- @keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* ========================================
+   PROCESO DE PAGO - DISEÑO MINIMALISTA MODERNO
+   ======================================== */
 
 /* Contenedor principal */
 .proceso-pago-container {
   display: flex;
-  padding: 2rem;
-  gap: 1rem;
+  padding: 32px;
+  gap: 24px;
   max-width: 1200px;
-  margin: 4rem auto;
-  background: linear-gradient(135deg, #1b1b1b, #000000);
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.5s ease-in-out;
-  transition: box-shadow 0.3s ease;
-}
-
-.proceso-pago-container:hover {
-  box-shadow: 0 10px 25px rgb(17, 17, 17);
+  margin: 100px auto 60px;
+  background: rgba(14, 14, 14, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Secciones principales */
 .proceso-pago-container .left-section,
 .proceso-pago-container .right-section,
 .proceso-pago-container .payment-summary {
-  background: rgb(19, 19, 19);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.2s ease;
 }
 
 .proceso-pago-container .left-section:hover,
-.proceso-pago-container .right-section:hover,
-.proceso-pago-container .payment-summary:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+.proceso-pago-container .right-section:hover {
+  border-color: rgba(0, 255, 255, 0.08);
 }
 
 .proceso-pago-container .left-section {
   flex: 2;
-  animation: slideInLeft 0.5s ease-in-out;
 }
 
 .proceso-pago-container .right-section {
   flex: 1;
-  animation: slideInRight 0.5s ease-in-out;
-}
-
-.proceso-pago-container .payment-summary {
-  animation: fadeInUp 0.5s ease-in-out;
 }
 
 /* Encabezados */
 .proceso-pago-container h2 {
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: #ffffff;
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.proceso-pago-container h2:hover::after {
-  width: 100%;
-  background: #ff0000;
+  letter-spacing: -0.02em;
 }
 
 .proceso-pago-container h3 {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.proceso-pago-container h3:hover {
-  color: #00eeff;
 }
 
 /* Lista de productos */
 .proceso-pago-container .product-list {
-  margin-bottom: 2rem;
+  margin-bottom: 24px;
 }
 
 .proceso-pago-container .product-item {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  border-bottom: 1px solid #eee;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  gap: 20px;
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.2s ease;
 }
 
 .proceso-pago-container .product-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 255, 255, 0.1);
 }
 
 .proceso-pago-container .product-item img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.proceso-pago-container .product-item img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .proceso-pago-container .product-details h4 {
-  font-size: 1.2rem;
+  font-size: 15px;
   color: #ffffff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 6px;
   font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.proceso-pago-container .product-details h4:hover {
-  color: #00eeff;
 }
 
 .proceso-pago-container .product-details p {
-  font-size: 1rem;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  transition: color 0.3s ease;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 4px;
 }
 
-.proceso-pago-container .product-details p:hover {
-  color: #ff0000;
-}
-
-/* Controles de cantidad y botones */
-.proceso-pago-container .quantity-controls,
-.proceso-pago-container .discount-section {
+/* Controles de cantidad */
+.proceso-pago-container .quantity-controls {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin: 1rem 0;
+  gap: 10px;
+  margin: 12px 0;
 }
 
-.proceso-pago-container .quantity-controls button,
-.proceso-pago-container .discount-section button,
-.proceso-pago-container .pay-button {
-  padding: 0.5rem 1rem;
-  background: #00e1ff;
-  color: rgb(0, 0, 0);
-  font-size: 1rem;
+.proceso-pago-container .quantity-controls button {
+  padding: 8px 14px;
+  background: rgba(0, 255, 255, 0.1);
+  color: #00ffff;
+  font-size: 14px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.2s ease;
 }
 
-.proceso-pago-container .quantity-controls button:hover,
-.proceso-pago-container .discount-section button:hover,
-.proceso-pago-container .pay-button:hover {
-  background: #00b7ff;
-  transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.proceso-pago-container .quantity-controls button:hover {
+  background: rgba(0, 255, 255, 0.2);
 }
 
 .proceso-pago-container .remove-btn {
-  background: #ff0000;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  background: transparent;
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  padding: 8px 14px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 13px;
+  transition: all 0.2s ease;
 }
 
 .proceso-pago-container .remove-btn:hover {
-  background: #cc0000;
-  transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: rgba(248, 113, 113, 0.1);
+  border-color: rgba(248, 113, 113, 0.5);
 }
 
 /* Métodos de pago y descuentos */
 .proceso-pago-container .payment-methods select,
 .proceso-pago-container .discount-section input {
   width: 100%;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-size: 1rem;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 14px;
   color: #ffffff;
-  background: #1b1b1b;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
 }
 
 .proceso-pago-container .payment-methods select:focus,
 .proceso-pago-container .discount-section input:focus {
-  border-color: #00eeff;
+  border-color: rgba(0, 255, 255, 0.4);
   outline: none;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 255, 255, 0.02);
+}
+
+.proceso-pago-container .discount-section {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.proceso-pago-container .discount-section button {
+  padding: 14px 24px;
+  background: #00ffff;
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.proceso-pago-container .discount-section button:hover {
+  background: #00e6e6;
 }
 
 /* Resumen de pago */
 .proceso-pago-container .breakdown p {
-  font-size: 1rem;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  transition: color 0.3s ease;
-}
-
-.proceso-pago-container .breakdown p:hover {
-  color: #00eeff;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .proceso-pago-container .breakdown hr {
   border: 0;
   height: 1px;
-  background: #ddd;
-  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 16px 0;
+}
+
+.proceso-pago-container .breakdown .total {
+  color: #00ffff;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 /* Botón de pago */
 .proceso-pago-container .pay-button {
   width: 100%;
-  padding: 1.5rem;
-  background: #00eeff;
-  color: rgb(0, 0, 0);
+  padding: 16px;
+  background: #00ffff;
+  color: #000;
   border: none;
-  border-radius: 10px;
-  font-size: 1.2rem;
+  border-radius: 12px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.2s ease;
+  margin-top: 20px;
 }
 
 .proceso-pago-container .pay-button:hover {
-  background: #00ffea;
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: #00e6e6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 255, 255, 0.2);
 }
 
 .proceso-pago-container .error {
-  color: #ff0000;
-  margin: 1rem 0;
-  font-size: 1rem;
+  color: #f87171;
+  margin: 16px 0;
+  font-size: 14px;
   text-align: center;
-  animation: shake 0.5s ease-in-out;
+  padding: 12px;
+  background: rgba(248, 113, 113, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(248, 113, 113, 0.2);
 }
 
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  50% {
-    transform: translateX(5px);
-  }
-  75% {
-    transform: translateX(-5px);
-  }
-}
-
+/* Credenciales de prueba */
 .proceso-pago-container .test-credentials {
-  background: #242424;
-  border-radius: 12px;
-  padding: 25px;
-  margin-top: 30px;
-  border: 1px solid #000000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.proceso-pago-container .test-credentials:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .proceso-pago-container .test-credentials h3 {
   color: #ffffff;
-  margin-bottom: 18px;
-  font-size: 1.3em;
+  margin-bottom: 16px;
+  font-size: 14px;
   font-weight: 600;
   text-align: center;
 }
 
 .proceso-pago-container .credential-section {
-  margin-bottom: 25px;
-  background: rgb(31, 31, 31);
-  padding: 18px;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 16px;
   border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.proceso-pago-container .credential-section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .proceso-pago-container .credential-section h4 {
   color: #00ffff;
   margin-bottom: 12px;
-  font-size: 1.1em;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .proceso-pago-container .credential-section ul {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
   margin: 0;
 }
 
 .proceso-pago-container .credential-section li {
   margin: 8px 0;
-  font-size: 0.95em;
-  color: #ffffff;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .proceso-pago-container .credential-section code {
-  background: #000000;
+  background: rgba(0, 0, 0, 0.4);
   padding: 4px 8px;
   border-radius: 6px;
-  color: #ffffff;
-  font-family: "Consolas", "Courier New", monospace;
-  font-size: 0.9em;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.proceso-pago-container .credential-section code:hover {
-  background: #e0e0e0;
-  color: #b02a1c;
+  color: #00ffff;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
 }
 
 .proceso-pago-container .disclaimer {
-  font-size: 0.9em;
-  color: #ffffff;
-  margin-top: 20px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 16px;
   text-align: center;
   line-height: 1.5;
 }
@@ -392,43 +303,165 @@
 .proceso-pago-container .disclaimer a {
   color: #00ffff;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .proceso-pago-container .disclaimer a:hover {
-  color: #00ffff;
+  text-decoration: underline;
 }
 
-/* Estilos para los botones de copiar */
 .proceso-pago-container .test-credentials button {
-  background-color: #00ffff;
-  color: rgb(0, 0, 0);
+  background: rgba(0, 255, 255, 0.1);
+  color: #00ffff;
   border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 4px 10px;
+  border-radius: 6px;
   cursor: pointer;
-  margin-left: 10px;
-  font-size: 0.8em;
-  transition: background-color 0.3s ease;
+  font-size: 11px;
+  transition: all 0.2s ease;
 }
 
 .proceso-pago-container .test-credentials button:hover {
-  background-color: #00ffff;
-}
-
-.proceso-pago-container .test-credentials button:active {
-  background-color: #00ffff;
+  background: rgba(0, 255, 255, 0.2);
 }
 
 .proceso-pago-container .copy-notification {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #00eeff;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 255, 255, 0.95);
   color: #000;
-  padding: 10px 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  animation: fadeIn 0.3s ease;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0, 255, 255, 0.3);
   z-index: 1000;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .proceso-pago-container {
+    flex-direction: column;
+    margin: 90px 20px 40px;
+    padding: 24px;
+  }
+
+  .proceso-pago-container .left-section,
+  .proceso-pago-container .right-section {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .proceso-pago-container {
+    margin: 80px 16px 32px;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 16px;
+  }
+
+  .proceso-pago-container .left-section,
+  .proceso-pago-container .right-section,
+  .proceso-pago-container .payment-summary {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .proceso-pago-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .proceso-pago-container h3 {
+    font-size: 1rem;
+  }
+
+  .proceso-pago-container .product-item {
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .proceso-pago-container .product-item img {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .proceso-pago-container .quantity-controls {
+    justify-content: center;
+  }
+
+  .proceso-pago-container .pay-button {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .proceso-pago-container .test-credentials {
+    padding: 18px;
+  }
+
+  .proceso-pago-container .credential-section {
+    padding: 14px;
+  }
+
+  .proceso-pago-container .credential-section li {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .proceso-pago-container {
+    margin: 70px 12px 24px;
+    padding: 16px;
+    gap: 16px;
+    border-radius: 14px;
+  }
+
+  .proceso-pago-container .left-section,
+  .proceso-pago-container .right-section,
+  .proceso-pago-container .payment-summary {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .proceso-pago-container h2 {
+    font-size: 1.1rem;
+  }
+
+  .proceso-pago-container .product-item img {
+    max-width: 120px;
+  }
+
+  .proceso-pago-container .product-details h4 {
+    font-size: 14px;
+  }
+
+  .proceso-pago-container .pay-button {
+    padding: 13px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .proceso-pago-container .breakdown p {
+    font-size: 13px;
+  }
 }

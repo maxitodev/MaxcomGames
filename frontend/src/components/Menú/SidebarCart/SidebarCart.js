@@ -93,42 +93,77 @@ const SidebarCart = ({ isOpen, toggleCart }) => {
   };
 
   return (
-    <div className={`cart-sidebar ${isOpen ? 'open' : ''}`}>
-      <button className="close-cart-button" onClick={toggleCart}>✖</button>
-      <h2>Carrito de Compra ({cart.length})</h2>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-      <div className="cart-preview">
-        {cart.length > 0 ? (
-          cart.map((item) => (
-            <div key={item.id} className="cart-item">
-              <img src={item.image} alt={item.name} className="cart-item-image" />
-              <div className="cart-item-details">
-                <h4>{item.name}</h4>
-                <p>ID: {item.id}</p>
-                <p>Precio: ${item.price} MXN</p>
-                <div className="quantity-controls">
-                  <button onClick={() => adjustQuantity(item.id, 'decrease')}>-</button>
-                  <span>{item.quantity}</span>
-                  <button onClick={() => adjustQuantity(item.id, 'increase')}>+</button>
+    <>
+      {/* Overlay */}
+      <div 
+        className={`cart-overlay ${isOpen ? 'open' : ''}`} 
+        onClick={toggleCart}
+        aria-hidden="true"
+      />
+      
+      {/* Sidebar del carrito */}
+      <div className={`cart-sidebar ${isOpen ? 'open' : ''}`}>
+        <div className="cart-header">
+          <h2>
+            <span className="cart-icon">🛒</span>
+            Mi Carrito
+            <span className="cart-count-badge">{cart.length}</span>
+          </h2>
+          <button className="close-cart-button" onClick={toggleCart} aria-label="Cerrar carrito">
+            <span>✕</span>
+          </button>
+        </div>
+        
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        
+        <div className="cart-preview">
+          {cart.length > 0 ? (
+            cart.map((item) => (
+              <div key={item.id} className="cart-item">
+                <div className="cart-item-image-container">
+                  <img src={item.image} alt={item.name} className="cart-item-image" />
                 </div>
-                <button onClick={() => removeProduct(item.id)} className="remove-button">
-                  Eliminar todo
+                <div className="cart-item-details">
+                  <h4>{item.name}</h4>
+                  <p className="item-price">${item.price} MXN</p>
+                  <div className="quantity-controls">
+                    <button onClick={() => adjustQuantity(item.id, 'decrease')} aria-label="Reducir cantidad">−</button>
+                    <span>{item.quantity}</span>
+                    <button onClick={() => adjustQuantity(item.id, 'increase')} aria-label="Aumentar cantidad">+</button>
+                  </div>
+                </div>
+                <button onClick={() => removeProduct(item.id)} className="remove-button" aria-label="Eliminar producto">
+                  🗑️
                 </button>
               </div>
+            ))
+          ) : (
+            <div className="empty-cart">
+              <span className="empty-cart-icon">🛒</span>
+              <p>Tu carrito está vacío</p>
+              <span className="empty-cart-hint">¡Agrega productos para empezar!</span>
             </div>
-          ))
-        ) : (
-          <p>Tu carrito está vacío.</p>
+          )}
+        </div>
+        
+        {cart.length > 0 && (
+          <>
+            <div className="cart-total">
+              <span>Total</span>
+              <span className="total-amount">${calculateTotal()} MXN</span>
+            </div>
+            <div className="cart-actions">
+              <button className="checkout-button" onClick={handleCheckout}>
+                <span>💳</span> Terminar Compra
+              </button>
+              <button className="continue-button" onClick={toggleCart}>
+                Seguir Explorando
+              </button>
+            </div>
+          </>
         )}
       </div>
-      <div className="cart-total">
-        <h3>Total: ${calculateTotal()} MXN</h3>
-      </div>
-      <div className="cart-actions">
-        <button onClick={handleCheckout}>Terminar Compra</button>
-        <button onClick={toggleCart}>Seguir Explorando</button>
-      </div>
-    </div>
+    </>
   );
 };
 

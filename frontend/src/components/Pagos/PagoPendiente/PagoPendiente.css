@@ -1,32 +1,136 @@
+/* ========================================
+   PAGO PENDIENTE - DISEÑO MINIMALISTA MODERNO
+   ======================================== */
+
 .pending-container {
-  margin-top: 5%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 24px;
   text-align: center;
-  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  margin-top: 140px;
+}
+
+.pending-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: rgba(255, 170, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
 }
 
 .pending-container h1 {
-  color: orange;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: #ffaa00;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
 }
 
 .pending-container p {
-  margin: 10px 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin-bottom: 12px;
 }
 
 .pending-buttons {
-  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 32px;
 }
 
 .pending-button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  background-color: #ffa726;
-  color: white;
+  padding: 12px 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
 }
 
-.pending-button:hover {
-  background-color: #fb8c00;
+.pending-button:first-child {
+  background: #ffaa00;
+  color: #000;
+}
+
+.pending-button:first-child:hover {
+  background: #e69900;
+  transform: translateY(-2px);
+}
+
+.pending-button:last-child {
+  background: transparent;
+  color: #ffaa00;
+  border: 1px solid rgba(255, 170, 0, 0.3);
+}
+
+.pending-button:last-child:hover {
+  background: rgba(255, 170, 0, 0.1);
+  border-color: rgba(255, 170, 0, 0.5);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .pending-container {
+    margin-top: 100px;
+    padding: 0 20px;
+  }
+
+  .pending-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+  }
+
+  .pending-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .pending-buttons {
+    flex-direction: column;
+  }
+
+  .pending-button {
+    width: 100%;
+    padding: 14px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pending-container {
+    margin-top: 90px;
+    padding: 0 16px;
+  }
+
+  .pending-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .pending-container h1 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .pending-container p {
+    font-size: 13px;
+  }
+
+  .pending-button {
+    padding: 12px 18px;
+    font-size: 13px;
+  }
 }

@@ -1,39 +1,48 @@
+/* ========================================
+   BANNER OFERTA - DISEÑO MINIMALISTA MODERNO
+   ======================================== */
+
 .oferta-container {
-  border-radius: 12px;
-  margin-top: 40px;
-  padding: 15px;
+  border-radius: 0;
+  margin-top: 50px;
+  padding: 20px;
   height: auto;
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
-.oferta-container:hover {
-  transform: scale(1);
+/* Slider debe ocupar todo el ancho */
+.oferta-container .slick-slider {
+  width: 100%;
 }
 
+/* Título/Botón principal */
 .oferta-container .banner-title-button {
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  padding: 15px 100px;
-  font-size: clamp(1.5rem, 2vw, 2rem);
+  background: #00ffff;
+  color: #000;
+  padding: 16px 80px;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
   border-radius: 12px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   display: inline-block;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  transition: all 0.2s ease;
+  margin: 0 auto 30px;
   text-align: center;
-  box-shadow: var(--shadow-light);
+  border: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.25);
 }
 
 .oferta-container .banner-title-button:hover {
-  background-color: var(--button-hover-color);
-  color: var(--text-color-light);
-  transform: scale(1.05);
+  background: #00e6e6;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.35);
 }
 
+/* Card de producto */
 .oferta-container .banner-product {
   position: relative;
   display: flex;
@@ -41,121 +50,327 @@
   justify-content: space-between;
   padding: 20px;
   width: 98%;
-  border-radius: 12px;
-  background-color: var(--navbar-color);
-  box-shadow: var(--shadow-medium);
-  transition: box-shadow 0.3s ease;
+  border-radius: 16px;
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.25s ease;
   height: auto;
-  min-height: 550px; /* Uniformidad sin exceso */
+  min-height: 480px;
+  overflow: visible;
 }
 
 .oferta-container .banner-product:hover {
-  box-shadow: var(--shadow-large);
+  border-color: rgba(0, 255, 255, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* Precio del producto - debajo del título */
 .oferta-container .banner-product-price {
-  position: absolute;
-  top: 40px;
-  right: 5px;
-  font-size: 2.5rem;
-  background: #363636;
-  border-radius: 6px;
-  padding: 8px 12px;
-  font-weight: bold;
-  color: #00eeff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00ffff;
+  margin: 8px 0 16px;
+  text-align: left;
 }
 
+/* Imagen del producto */
+.oferta-container .banner-product img {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.oferta-container .banner-product:hover img {
+  transform: scale(1.02);
+}
+
+/* Título del item */
+.oferta-container .banner-item-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color-light);
+  margin: 16px 0 8px;
+  text-align: left;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+}
+
+.oferta-container .banner-item-title:hover {
+  color: #00ffff;
+}
+
+/* Link de imagen */
+.oferta-container .banner-image-link {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Botones de acción */
 .oferta-container .banner-buttons {
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  gap: 12px;
+  margin-top: 16px;
+  position: relative;
+  z-index: 10;
 }
 
 .oferta-container .banner-buy-button,
 .oferta-container .banner-cart-button {
-  padding: 12px 24px;
-  font-size: 1.1rem;
-  background-color: var(--primary-color);
-  color: var(--background-color);
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 13px;
+  background: #00ffff;
+  color: #000;
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.2s ease;
   cursor: pointer;
-  box-shadow: var(--shadow-light);
+  border: none;
+  text-align: center;
+  position: relative;
+  z-index: 15;
+  pointer-events: auto;
 }
 
 .oferta-container .banner-buy-button:hover,
 .oferta-container .banner-cart-button:hover {
-  background-color: var(--button-hover-color);
-  color: var(--text-color-light);
-  transform: scale(1.05);
-  box-shadow: var(--shadow-medium);
+  background: #00e6e6;
+  transform: translateY(-1px);
 }
 
+.oferta-container .banner-cart-button {
+  background: transparent;
+  color: #00ffff;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.oferta-container .banner-cart-button:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.5);
+}
+
+/* Flechas de navegación - MINIMALISTAS */
 .oferta-container .slick-prev,
 .oferta-container .slick-next {
-  width: 50px;
-  height: 50px;
-  z-index: 10;
-  border-radius: 50%;
-  display: flex;
+  position: absolute;
+  bottom: -45px;
+  top: auto;
+  width: 32px;
+  height: 32px;
+  z-index: 100;
+  border-radius: 0;
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+  transform: none;
+  opacity: 0.5;
+}
+
+.oferta-container .slick-prev {
+  left: calc(50% - 140px);
+}
+
+.oferta-container .slick-next {
+  right: calc(50% - 140px);
+}
+
+.oferta-container .slick-prev:hover,
+.oferta-container .slick-next:hover {
+  opacity: 1;
 }
 
 .oferta-container .slick-prev::before,
 .oferta-container .slick-next::before {
-  content: '';
-  display: inline-block;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  padding: 10px;
-  transition: transform 0.3s ease;
-}
-
-.oferta-container .slick-prev::before {
-  transform: rotate(135deg);
+  content: '‹';
+  font-size: 28px;
+  font-weight: 300;
+  color: #00ffff;
+  line-height: 1;
+  transition: all 0.2s ease;
 }
 
 .oferta-container .slick-next::before {
-  transform: rotate(-45deg);
+  content: '›';
 }
 
-.oferta-container .banner-item-title {
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--text-color-light);
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  margin: 10px 0;
-  text-align: left;
-  transition: color 0.3s ease;
+.oferta-container .slick-prev:hover::before,
+.oferta-container .slick-next:hover::before {
+  color: #fff;
 }
 
-.oferta-container .banner-item-title:hover {
-  color: #00eeff;
+/* Dots de navegación - MINIMALISTAS */
+.oferta-container .slick-dots {
+  bottom: -50px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 
-.oferta-container .banner-product img {
-  width: 100%;
+.oferta-container .slick-dots li {
+  margin: 0;
+  width: auto;
   height: auto;
 }
 
+.oferta-container .slick-dots li button {
+  width: 24px;
+  height: 3px;
+  padding: 0;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.oferta-container .slick-dots li button:before {
+  display: none;
+}
+
+.oferta-container .slick-dots li.slick-active button {
+  background: #00ffff;
+  width: 32px;
+}
+
+/* Espacio para los controles de navegación */
+.oferta-container .slick-slider {
+  margin-bottom: 60px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
 @media (max-width: 1024px) {
   .oferta-container .banner-product {
-    max-height: 600px;
-    overflow: hidden;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    min-height: 440px;
+  }
+
+  .oferta-container .banner-product img {
+    max-height: 240px;
+  }
+
+  .oferta-container .banner-product-price {
+    font-size: 1.2rem;
+    padding: 8px 14px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .oferta-container {
+    margin-top: 40px;
+    padding: 16px;
+  }
+
+  .oferta-container .banner-title-button {
+    padding: 12px 40px;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
   .oferta-container .banner-product {
-    margin-bottom: 10px;
-    min-height: 500px;
+    min-height: 400px;
+    padding: 16px;
+  }
+
+  .oferta-container .banner-product img {
+    max-height: 200px;
+  }
+
+  .oferta-container .banner-product-price {
+    font-size: 1.1rem;
+    top: 16px;
+    right: 16px;
+  }
+
+  .oferta-container .banner-item-title {
+    font-size: 0.9rem;
+  }
+
+  .oferta-container .banner-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .oferta-container .banner-buy-button,
+  .oferta-container .banner-cart-button {
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+
+  .oferta-container .slick-prev,
+  .oferta-container .slick-next {
+    width: 44px;
+    height: 44px;
+    display: flex !important;
+  }
+
+  .oferta-container .slick-prev::before,
+  .oferta-container .slick-next::before {
+    padding: 6px;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .oferta-container {
+    margin-top: 32px;
+    padding: 12px;
+  }
+
+  .oferta-container .banner-title-button {
+    padding: 11px 32px;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .oferta-container .banner-product {
+    min-height: 360px;
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .oferta-container .banner-product img {
+    max-height: 180px;
+    border-radius: 10px;
+  }
+
+  .oferta-container .banner-product-price {
+    font-size: 1rem;
+    padding: 8px 12px;
+    top: 14px;
+    right: 14px;
+  }
+
+  .oferta-container .banner-item-title {
+    font-size: 0.85rem;
+    margin: 12px 0 6px;
+  }
+
+  .oferta-container .slick-prev,
+  .oferta-container .slick-next {
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+  }
+
+  .oferta-container .slick-prev::before,
+  .oferta-container .slick-next::before {
+    padding: 5px;
+    border-width: 0 2px 2px 0;
   }
 }

@@ -1,225 +1,246 @@
-.reportar-problema-container .body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #080808;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-}
+/* ========================================
+   REPORTAR PROBLEMA - DISEÑO MINIMALISTA MODERNO
+   ======================================== */
 
 .reportar-problema-container {
-  background: #1a1a1a;
-  max-width: 800px;
-  margin: 6em auto;
-  padding: 3em;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  margin: 100px auto 60px;
+  padding: 40px;
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
   color: #ffffff;
-  transition: transform 0.3s ease;
-}
-
-.reportar-problema-container:hover {
-  transform: translateY(-10px);
+  font-family: 'Inter', sans-serif;
 }
 
 .reportar-problema-container h1 {
-  margin-bottom: 2em;
-  font-size: 3em;
+  font-size: clamp(1.6rem, 3vw, 2rem);
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
 }
 
-.reportar-problema-container h2{
-  margin-top: 0%;
-  margin-bottom: 1.5em;
-  color: #00e1ff;
-  font-weight: bold;
+.reportar-problema-container h2 {
+  font-size: 14px;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
 }
 
 .reportar-problema-container h3 {
-  color: #00f7ff;
-  font-size: 50px;
-  margin-bottom: 5%;
+  color: #00ffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
 }
 
+/* Secciones de información */
 .reportar-problema-container .order-info,
-.reportar-problema-container .producto-info,
-.reportar-problema-container .order-info,
-.reportar-problema-container h1 {
-  margin-bottom: 2em;
-  padding-bottom: 1.5em;
-  border-bottom: 1px solid #000000;
+.reportar-problema-container .producto-info {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .reportar-problema-container .producto-info p {
-  margin-bottom: 1em;
-  font-size: larger;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .reportar-problema-container .producto-info img {
-  height: 220px;
-  width: 520px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  max-height: 200px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 2em;
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.reportar-problema-container .producto-info img:hover {
-  transform: scale(1.05);
-}
-
+/* Formulario */
 .reportar-problema-container .reporte-form {
   display: flex;
   flex-direction: column;
 }
 
 .reportar-problema-container .reporte-form h3 {
-  margin-bottom: 0.em;
-  color: #00e1ff;
-}
-
-.reportar-problema-container .producto-info-text {
-  text-align: left;
+  margin-bottom: 16px;
+  color: #00ffff;
 }
 
 .reportar-problema-container .reporte-form textarea {
   resize: vertical;
-  min-height: 150px;
-  padding: 1em;
-  border: 1px solid #333;
-  border-radius: 8px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin-bottom: 1em;
-  transition: border-color 0.3s;
-  background: #1a1a1a;
+  min-height: 140px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.03);
   color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.reportar-problema-container .reporte-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .reportar-problema-container .reporte-form textarea:focus {
-  border-color: #00e1ff;
+  border-color: rgba(0, 255, 255, 0.4);
   outline: none;
+  background: rgba(0, 255, 255, 0.02);
 }
 
 .reportar-problema-container .reporte-form textarea.error {
-  border-color: #e74c3c;
+  border-color: rgba(248, 113, 113, 0.5);
 }
 
 .reportar-problema-container .reporte-form .error-message {
-  color: #e74c3c;
-  margin-bottom: 1em;
-  font-size: 1em;
+  color: #f87171;
+  margin-bottom: 16px;
+  font-size: 13px;
+  padding: 12px;
+  background: rgba(248, 113, 113, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(248, 113, 113, 0.2);
 }
 
+/* Botón de envío */
 .reportar-problema-container .submit-button {
-  background: #00e1ff;
-  color: #000000;
-  padding: 1em;
+  background: #00ffff;
+  color: #000;
+  padding: 14px 28px;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  font-size: 1.2em;
-  transition: background 0.3s, transform 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .reportar-problema-container .submit-button:hover {
-  background: #00ccff;
-  transform: scale(1.05);
+  background: #00e6e6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 255, 255, 0.2);
 }
 
-/* Nuevos estilos para los diferentes estados del botón */
+/* Estados del botón */
 .reportar-problema-container .submit-button.sending {
-  background: #ffc107; /* color amarillo/ámbar */
-  color: #000000;
+  background: #fbbf24;
+  color: #000;
 }
 
 .reportar-problema-container .submit-button.success {
-  background: #28a745; /* color verde */
-  color: #ffffff;
+  background: #4ade80;
+  color: #000;
 }
 
 .reportar-problema-container .submit-button.error {
-  background: #dc3545; /* color rojo */
-  color: #ffffff;
+  background: #f87171;
+  color: #fff;
 }
 
-/* Estilos para el contenedor de error cuando no se reciben los datos */
+/* Contenedor de error */
 .reportar-problema-container .error-container {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  max-width: 600px;
-  margin: 2em auto;
-  padding: 2em;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 24px;
   text-align: center;
-  background: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: rgba(248, 113, 113, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  border-radius: 14px;
 }
 
-/* Opcional: mensajes emergentes o avisos pueden ser estilizados de forma similar */
+/* Aviso de éxito */
 .reportar-problema-container .aviso-exito {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-  padding: 1.5em;
-  margin-bottom: 1em;
-  border-radius: 8px;
+  background: rgba(74, 222, 128, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
 }
 
-@media (max-width: 600px) {
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
   .reportar-problema-container {
-    padding: 1.5em;
-    margin: 3em auto;
+    padding: 28px 20px;
+    margin: 80px 16px 40px;
+    max-width: 100%;
+    border-radius: 16px;
   }
 
-  .reportar-problema-container h1,
-  .reportar-problema-container h2,
+  .reportar-problema-container h1 {
+    margin-bottom: 8px;
+  }
+
+  .reportar-problema-container h2 {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
   .reportar-problema-container h3 {
-    margin-bottom: 1em;
+    font-size: 15px;
   }
 
-  .reportar-problema-container .order-info,
-  .reportar-problema-container .producto-info {
-    margin-bottom: 1.5em;
-    padding-bottom: 1em;
+  .reportar-problema-container .producto-info img {
+    max-width: 100%;
+    max-height: 180px;
+  }
+
+  .reportar-problema-container .reporte-form textarea {
+    min-height: 120px;
+    padding: 14px;
+  }
+
+  .reportar-problema-container .submit-button {
+    width: 100%;
+    padding: 14px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reportar-problema-container {
+    padding: 24px 16px;
+    margin: 70px 12px 32px;
+    border-radius: 14px;
+  }
+
+  .reportar-problema-container h3 {
+    font-size: 14px;
+  }
+
+  .reportar-problema-container .producto-info p {
+    font-size: 13px;
+  }
+
+  .reportar-problema-container .producto-info img {
+    border-radius: 10px;
+    max-height: 160px;
   }
 
   .reportar-problema-container .reporte-form textarea {
     min-height: 100px;
-    font-size: 0.9em;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 10px;
   }
 
   .reportar-problema-container .submit-button {
-    font-size: 1em;
+    padding: 13px 20px;
+    font-size: 14px;
+    border-radius: 10px;
   }
-}
-
-.reportar-problema-container .notification {
-  margin-bottom: 1em;
-  padding: 1em;
-  border-radius: 8px;
-  text-align: center;
-}
-.reportar-problema-container .notification.success {
-  background: #d4edda;
-  color: #155724;
-}
-.reportar-problema-container .notification.error {
-  background: #f8d7da;
-  color: #721c24;
-}
-
-.reportar-problema-container .processing {
-  margin-bottom: 1em;
-  padding: 1em;
-  border-radius: 8px;
-  text-align: center;
-  background: #e2e3e5;
-  color: #383d41;
 }

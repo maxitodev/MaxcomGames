@@ -1,86 +1,131 @@
-/* Estilos generales */
+/* ========================================
+   ABOUT - DISEÑO MINIMALISTA MODERNO
+   ======================================== */
+
 .about-container {
-    background: linear-gradient(135deg, #1e1e1e, #121212);
-    color: #d4d4d4;
-    font-family: 'Poppins', sans-serif; /* Fuente moderna */
-    padding: 40px 20px;
-    max-width: 800px; /* Ancho máximo para centrar el contenido */
-    margin: 0 auto; /* Centra el contenedor */
-    border-radius: 10px; /* Bordes redondeados suaves */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para destacar el contenedor */
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Inter', sans-serif;
+  padding: 48px 40px;
+  max-width: 800px;
+  margin: 100px auto 60px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.about-container h1 {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.about-container h1::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+.about-container p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 20px 0;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.about-container p strong {
+  color: #00ffff;
+  font-weight: 600;
+}
+
+/* Botón CTA */
+.about-container .cta-button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 32px;
+  background: #00ffff;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.about-container .cta-button:hover {
+  background: #00e6e6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 255, 255, 0.2);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 36px 24px;
+    margin: 80px 16px 40px;
+    max-width: 100%;
+    border-radius: 16px;
   }
-  
+
   .about-container h1 {
-    margin-top: 20%;
-    font-size: 28px;
-    color: #00e1ff;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 20px;
-    text-align: center; /* Centra el título */
-    position: relative; /* Para agregar detalles decorativos */
+    margin-top: 0;
   }
-  
+
   .about-container h1::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 2px;
-    background: #00e1ff;
-    margin: 10px auto 20px; /* Línea decorativa debajo del título */
+    margin: 14px auto 0;
+    width: 40px;
   }
-  
+
   .about-container p {
-    font-size: 16px;
-    line-height: 1.7; /* Mejora la legibilidad */
-    margin: 15px 0;
-    opacity: 0.9; /* Reduce la opacidad para darle un toque suave */
-    text-align: justify; /* Justifica el texto para un diseño más limpio */
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 16px 0;
   }
-  
-  .about-container p strong {
-    color: #00e1ff; /* Resalta palabras clave en azul cian */
-    font-weight: 600; /* Negrita moderada */
-  }
-  
-  /* Efectos visuales para mejorar la experiencia */
-  .about-container p:hover {
-    opacity: 1; /* Aumenta la opacidad al pasar el mouse */
-    transition: opacity 0.3s ease;
-  }
-  
-  /* Botón opcional para proyectos o enlaces adicionales */
+
   .about-container .cta-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: rgba(0, 188, 212, 0.1);
-    color: #d4d4d4;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    padding: 13px 28px;
+    font-size: 13px;
   }
-  
-  .about-container .cta-button:hover {
-    background-color: rgba(0, 188, 212, 0.3);
-    color: #00e1ff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Refuerza la sombra en hover */
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 28px 20px;
+    margin: 70px 12px 32px;
+    border-radius: 14px;
   }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .about-container {
-      padding: 30px 15px;
-    }
-  
-    .about-container h1 {
-      font-size: 24px;
-    }
-  
-    .about-container p {
-      font-size: 14px;
-    }
+
+  .about-container h1::after {
+    width: 36px;
+    height: 2px;
+    margin: 12px auto 0;
   }
+
+  .about-container p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 14px 0;
+  }
+
+  .about-container .cta-button {
+    padding: 12px 24px;
+    font-size: 13px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+  }
+}

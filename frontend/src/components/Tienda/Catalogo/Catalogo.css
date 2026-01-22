@@ -1,18 +1,69 @@
+/* ========================================
+   CATÁLOGO - DISEÑO MINIMALISTA MODERNO
+   ======================================== */
+
 .catalogo-container {
-    max-width: 1300px;
-    margin-top: 10px;
-    margin: 2rem auto;
-    padding: 0 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
-  
+
 .catalogo-titulo {
-    margin-top: 10%;
-    text-align: center;
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  margin-top: 100px;
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 50px;
+  letter-spacing: -0.02em;
+  position: relative;
 }
- 
+
+.catalogo-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+  border-radius: 2px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .catalogo-container {
+    padding: 0 16px;
+  }
+
+  .catalogo-titulo {
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
+
+  .catalogo-titulo::after {
+    width: 50px;
+    bottom: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalogo-container {
+    padding: 0 12px;
+  }
+
+  .catalogo-titulo {
+    margin-top: 70px;
+    margin-bottom: 32px;
+  }
+
+  .catalogo-titulo::after {
+    width: 40px;
+    height: 2px;
+    bottom: -8px;
+  }
+}
