@@ -133,7 +133,7 @@ const SidebarCart = ({ isOpen, toggleCart }) => {
                   </div>
                 </div>
                 <button onClick={() => removeProduct(item.id)} className="remove-button" aria-label="Eliminar producto">
-                  🗑️
+                  Eliminar
                 </button>
               </div>
             ))
