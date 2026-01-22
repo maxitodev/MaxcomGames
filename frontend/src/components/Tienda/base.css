@@ -96,10 +96,155 @@ body {
 }
 
 /* ========================================
+   SKELETON LOADING - ANIMACIÓN SHIMMER
+   ======================================== */
+
+/* Animación Shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.08) 20%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.08) 80%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite linear;
+  border-radius: 12px;
+}
+
+/* Skeleton para Promoción */
+.skeleton-promocion {
+  position: relative;
+  width: 100%;
+  height: clamp(320px, 55vh, 520px);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+.skeleton-promocion .skeleton-image {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0;
+}
+
+.skeleton-promocion .skeleton-content {
+  position: absolute;
+  bottom: 12%;
+  left: 5%;
+  width: 60%;
+  max-width: 550px;
+}
+
+.skeleton-promocion .skeleton-button {
+  width: 180px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(0, 255, 255, 0.1);
+}
+
+/* Skeleton para Ofertas */
+.skeleton-ofertas-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+.skeleton-oferta-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(18, 18, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  height: 480px;
+  box-sizing: border-box;
+}
+
+.skeleton-oferta-image {
+  flex: 1;
+  min-height: 200px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.skeleton-oferta-title {
+  width: 80%;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.skeleton-oferta-price {
+  width: 50%;
+  height: 32px;
+  background: rgba(0, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.skeleton-oferta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton-oferta-btn {
+  width: 100%;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+
+.skeleton-oferta-btn:first-child {
+  background: rgba(0, 255, 255, 0.1);
+}
+
+/* Botón de título skeleton */
+.skeleton-title-btn {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ========================================
    RESPONSIVE
    ======================================== */
 
 @media (max-width: 768px) {
+  .skeleton-ofertas-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .skeleton-oferta-card {
+    height: 400px;
+    padding: 16px;
+  }
+
   .no-data-message {
     font-size: 1.1rem;
     padding: 30px 16px;
@@ -120,6 +265,20 @@ body {
 }
 
 @media (max-width: 480px) {
+  .skeleton-ofertas-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  
+  .skeleton-oferta-card {
+    height: 360px;
+    padding: 14px;
+  }
+  
+  .skeleton-promocion {
+    height: clamp(250px, 45vh, 350px);
+  }
+
   .no-data-message {
     font-size: 1rem;
     padding: 24px 14px;

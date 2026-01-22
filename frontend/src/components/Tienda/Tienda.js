@@ -11,12 +11,41 @@ import './banner-oferta.css';
 import './responsive.css';
 import axiosInstance from '../../utils/AxiosInstance';
 
+// Componente Skeleton para el banner de Promoción
+const PromocionSkeleton = () => (
+  <div className="skeleton-promocion">
+    <div className="skeleton-image skeleton-shimmer"></div>
+    <div className="skeleton-content">
+      <div className="skeleton-button skeleton-shimmer"></div>
+    </div>
+  </div>
+);
+
+// Componente Skeleton para el banner de Ofertas
+const OfertaSkeleton = () => (
+  <div className="skeleton-ofertas-container">
+    {[1, 2, 3, 4].map((item) => (
+      <div key={item} className="skeleton-oferta-card">
+        <div className="skeleton-oferta-image skeleton-shimmer"></div>
+        <div className="skeleton-oferta-title skeleton-shimmer"></div>
+        <div className="skeleton-oferta-price skeleton-shimmer"></div>
+        <div className="skeleton-oferta-buttons">
+          <div className="skeleton-oferta-btn skeleton-shimmer"></div>
+          <div className="skeleton-oferta-btn skeleton-shimmer"></div>
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
 const Banner = ({ categoria, title, sliderSettings, noDataMessage, showNotification }) => {
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchItems = async () => {
+      setIsLoading(true);
       try {
         const response = await axiosInstance.get(`/products`, {
           params: { categoria },
@@ -25,6 +54,8 @@ const Banner = ({ categoria, title, sliderSettings, noDataMessage, showNotificat
       } catch (error) {
         console.error(`Error al obtener los productos de ${categoria}:`, error);
         setItems([]);
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchItems();
@@ -63,6 +94,21 @@ const Banner = ({ categoria, title, sliderSettings, noDataMessage, showNotificat
       }
     }
   };
+
+  // Renderizar skeleton mientras carga
+  if (isLoading) {
+    return (
+      <div className={`banner-container ${categoria.toLowerCase()}-container`}>
+        {categoria === "Promoción" && title && <h2 className="banner-title">{title}</h2>}
+        {categoria === "Oferta" && title && (
+          <div className="banner-title-button skeleton-title-btn">
+            {title}
+          </div>
+        )}
+        {categoria === "Promoción" ? <PromocionSkeleton /> : <OfertaSkeleton />}
+      </div>
+    );
+  }
 
   return (
     <div className={`banner-container ${categoria.toLowerCase()}-container`}>
