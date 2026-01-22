@@ -8,6 +8,8 @@ const ProcesoPago = () => {
   const [paymentMethod, setPaymentMethod] = useState('');
   const [discountCode, setDiscountCode] = useState('');
   const [discount, setDiscount] = useState(0);
+  const [discountApplied, setDiscountApplied] = useState(false);
+  const [discountStatus, setDiscountStatus] = useState(''); // 'success', 'error', ''
   const [errorMessage, setErrorMessage] = useState('');
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   // eslint-disable-next-line no-unused-vars
@@ -86,18 +88,52 @@ const ProcesoPago = () => {
   };
 
   const handleApplyDiscount = async () => {
+    // Validar que se haya seleccionado un método de pago
+    if (!paymentMethod) {
+      setDiscountStatus('error');
+      setErrorMessage('Primero selecciona un método de pago');
+      return;
+    }
+
+    // Validar que el código no esté vacío antes de enviar
+    if (!discountCode || discountCode.trim() === '') {
+      setDiscountStatus('error');
+      setErrorMessage('Por favor ingresa un código de descuento');
+      return;
+    }
+
     try {
       const response = await axiosInstance.post('/descuentos/aplicar', {
-        codigo: discountCode
+        codigo: discountCode.trim()
       }, {
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { 
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
       });
-      setDiscount(response.data.descuento); // Asegúrate de que este valor sea un porcentaje
+      setDiscount(response.data.descuento);
+      setDiscountApplied(true);
+      setDiscountStatus('success');
       setErrorMessage('');
     } catch (error) {
       console.error('Error al aplicar descuento:', error);
-      setErrorMessage('Código de descuento inválido');
+      setDiscountStatus('error');
+      // Mostrar mensaje específico del servidor si existe
+      const serverMessage = error.response?.data?.msg;
+      if (serverMessage) {
+        setErrorMessage(serverMessage);
+      } else {
+        setErrorMessage('Código de descuento inválido');
+      }
     }
+  };
+
+  const handleRemoveDiscount = () => {
+    setDiscountCode('');
+    setDiscount(0);
+    setDiscountApplied(false);
+    setDiscountStatus('');
+    setErrorMessage('');
   };
 
   const calculateSubtotal = () => {
@@ -237,14 +273,39 @@ const ProcesoPago = () => {
           <option value="creditcard">Tarjeta de crédito/débito</option> {/* Ahora usa Stripe */}
   </select>
           </div>
-          <div className="discount-section">
-            <input
-              type="text"
-              placeholder="Código de descuento"
-              value={discountCode}
-              onChange={(e) => setDiscountCode(e.target.value)}
-            />
-            <button onClick={handleApplyDiscount}>Aplicar</button>
+          <div className={`discount-section ${discountStatus}`}>
+            <div className="discount-input-wrapper">
+              <input
+                type="text"
+                placeholder="Código de descuento"
+                value={discountCode}
+                onChange={(e) => setDiscountCode(e.target.value)}
+                disabled={discountApplied}
+                className={discountApplied ? 'disabled' : ''}
+              />
+              {discountApplied ? (
+                <button onClick={handleRemoveDiscount} className="remove-discount">
+                  <span>×</span>
+                </button>
+              ) : (
+                <button onClick={handleApplyDiscount}>Aplicar</button>
+              )}
+            </div>
+            {discountStatus === 'success' && (
+              <div className="discount-message success">
+                <span className="icon">✓</span>
+                Descuento del {discount}% aplicado
+              </div>
+            )}
+            {discountStatus === 'error' && errorMessage && (
+              <div className="discount-message error">
+                <span className="icon">!</span>
+                {errorMessage}
+              </div>
+            )}
+            {!discountApplied && discountStatus !== 'error' && (
+              <p className="discount-hint">¿Eres de la UAM Cuajimalpa? Usa el código <strong>UAMC</strong></p>
+            )}
           </div>
           <p className="disclaimer">* Al hacer clic en "Realizar pago", se proporcionarán las credenciales de prueba necesarias para completar la transacción.</p>
         </div>

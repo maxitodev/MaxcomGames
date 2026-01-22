@@ -36,17 +36,20 @@ const Confirmacion = () => {
   }, [token]);
 
   return (
-    <div className="confirmation-container">
-      <h1>Pago Aprobado</h1>
-      <p>¡Gracias por tu compra!</p>
-      <p>En un momento tus productos serán enviados a tu correo electrónico.</p>
-      <div className="confirmation-buttons">
-        <button onClick={() => navigate('/mis-pedidos')} className="confirmation-button">
-          Ir a Mis Pedidos
-        </button>
-        <button onClick={() => navigate('/')} className="confirmation-button">
-          Volver a la tienda
-        </button>
+    <div className="confirmation">
+      <div className="confirmation-container">
+        <div className="success-icon">✓</div>
+        <h1>Pago Aprobado</h1>
+        <p>¡Gracias por tu compra!</p>
+        <p>En un momento tus productos serán enviados a tu correo electrónico.</p>
+        <div className="confirmation-buttons">
+          <button onClick={() => navigate('/mis-pedidos')} className="confirmation-button">
+            Ir a Mis Pedidos
+          </button>
+          <button onClick={() => navigate('/')} className="confirmation-button secondary">
+            Volver a la tienda
+          </button>
+        </div>
       </div>
     </div>
   );

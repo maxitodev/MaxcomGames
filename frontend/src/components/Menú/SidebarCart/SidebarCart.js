@@ -113,6 +113,11 @@ const SidebarCart = ({ isOpen, toggleCart }) => {
             <span>✕</span>
           </button>
         </div>
+
+        {/* Botón cerrar móvil */}
+        <button className="close-cart-mobile" onClick={toggleCart}>
+          ← Volver
+        </button>
         
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         
@@ -120,16 +125,18 @@ const SidebarCart = ({ isOpen, toggleCart }) => {
           {cart.length > 0 ? (
             cart.map((item) => (
               <div key={item.id} className="cart-item">
-                <div className="cart-item-image-container">
-                  <img src={item.image} alt={item.name} className="cart-item-image" />
-                </div>
-                <div className="cart-item-details">
-                  <h4>{item.name}</h4>
-                  <p className="item-price">${item.price} MXN</p>
-                  <div className="quantity-controls">
-                    <button onClick={() => adjustQuantity(item.id, 'decrease')} aria-label="Reducir cantidad">−</button>
-                    <span>{item.quantity}</span>
-                    <button onClick={() => adjustQuantity(item.id, 'increase')} aria-label="Aumentar cantidad">+</button>
+                <div className="cart-item-content">
+                  <div className="cart-item-image-container">
+                    <img src={item.image} alt={item.name} className="cart-item-image" />
+                  </div>
+                  <div className="cart-item-details">
+                    <h4>{item.name}</h4>
+                    <p className="item-price">${item.price} MXN</p>
+                    <div className="quantity-controls">
+                      <button onClick={() => adjustQuantity(item.id, 'decrease')} aria-label="Reducir cantidad">−</button>
+                      <span>{item.quantity}</span>
+                      <button onClick={() => adjustQuantity(item.id, 'increase')} aria-label="Aumentar cantidad">+</button>
+                    </div>
                   </div>
                 </div>
                 <button onClick={() => removeProduct(item.id)} className="remove-button" aria-label="Eliminar producto">

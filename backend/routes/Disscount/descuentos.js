@@ -93,12 +93,16 @@ router.delete('/eliminar/:id', async (req, res) => {
 // Ruta para aplicar descuento (ya existente)
 router.post('/aplicar', async (req, res) => {
   try {
+    console.log('Body recibido:', req.body); // Log para depurar
     const { codigo } = req.body;
-    if (!codigo) {
+    
+    if (!codigo || codigo.trim() === '') {
       return res.status(400).json({ msg: 'El código es requerido' });
     }
     
-    const descuento = await Descuento.findOne({ Codigo_Descuento: codigo });
+    const descuento = await Descuento.findOne({ Codigo_Descuento: codigo.trim() });
+    console.log('Descuento encontrado:', descuento); // Log para depurar
+    
     if (!descuento) {
       return res.status(404).json({ msg: 'Código de descuento no encontrado' });
     }
