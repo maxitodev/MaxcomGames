@@ -10,9 +10,6 @@ const transporter = require('../../config/Gmail/Gmail'); // Importar transporter
 const SECRET_KEY = process.env.JWT_SECRET; // Llave secreta para JWT
 const router = express.Router();
 
-// Agregar variable para URL del frontend
-const frontendUrl = 'http://localhost:3000'; // Explicitly set to localhost for development
-
 // Ruta para el registro de usuarios
 router.post('/register', async (req, res) => {
   const { ID_Usuario, Nombre, Correo, Contraseña, Tipo_Autenticación } = req.body;
