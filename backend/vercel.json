@@ -15,20 +15,5 @@
       "src": "/(.*)",
       "dest": "index.js"
     }
-  ],
-  "env": {
-    "MONGO_URI": "@mongo_uri",
-    "JWT_SECRET": "@jwt_secret",
-    "SECRET_KEY": "@secret_key",
-    "GOOGLE_CLIENT_ID": "@google_client_id",
-    "EMAIL_USER": "@email_user",
-    "EMAIL_PASSWORD": "@email_password",
-    "PAYPAL_CLIENT_ID": "@paypal_client_id",
-    "PAYPAL_SECRET": "@paypal_secret",
-    "PAYPAL_ENV": "@paypal_env",
-    "MERCADOPAGO_ACCESS_TOKEN": "@mercadopago_access_token",
-    "FRONTEND_URL": "@frontend_url",
-    "BACKEND_URL": "@backend_url",
-    "STRIPE_SECRET_KEY": "@stripe_secret_key"
-  }
+  ]
 }
