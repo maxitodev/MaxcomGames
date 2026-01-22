@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import './SidebarMenu.css';
 import emailIcon from '../../../assets/icons/email.png';
 import whatsappIcon from '../../../assets/icons/whatsapp.png';
-import facebookIcon from '../../../assets/icons/facebook.png';
-import twitterIcon from '../../../assets/icons/twitter.png';
-import instagramIcon from '../../../assets/icons/instagram.png';
 
 const SidebarMenu = ({ isOpen, toggleMenu }) => {
   const token = localStorage.getItem('token'); // Check for token in localStorage

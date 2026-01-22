@@ -4,9 +4,6 @@ import './Footer.css';
 import logo2 from '../../assets/images/logo2.png';
 import EmailIcon from '../../assets/icons/email.png';      // Icono para correo
 import WhatsAppIcon from '../../assets/icons/whatsapp.png';// Icono WhatsApp
-import FacebookIcon from '../../assets/icons/facebook.png';// Icono Facebook
-import TwitterIcon from '../../assets/icons/twitter.png';  // Icono Twitter
-import InstagramIcon from '../../assets/icons/instagram.png';// Icono Instagram
 
 const Footer = () => {
   const navigate = useNavigate();
