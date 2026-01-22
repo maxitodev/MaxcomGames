@@ -47,7 +47,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 20px;
   width: 98%;
   border-radius: 16px;
@@ -56,9 +55,9 @@
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.06);
   transition: all 0.25s ease;
-  height: auto;
-  min-height: 480px;
-  overflow: visible;
+  height: 480px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .oferta-container .banner-product:hover {
@@ -74,13 +73,24 @@
   color: #00ffff;
   margin: 8px 0 16px;
   text-align: left;
+  flex-shrink: 0;
+}
+
+/* Contenedor de imagen */
+.oferta-container .banner-image-link {
+  display: block;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 /* Imagen del producto */
 .oferta-container .banner-product img {
   width: 100%;
-  height: auto;
-  max-height: 280px;
+  height: 100%;
   object-fit: cover;
   border-radius: 12px;
   transition: transform 0.3s ease;
@@ -95,30 +105,32 @@
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-color-light);
-  margin: 16px 0 8px;
+  margin: 12px 0 8px;
   text-align: left;
   transition: color 0.2s ease;
-  line-height: 1.4;
+  line-height: 1.3;
+  flex-shrink: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.6em;
 }
 
 .oferta-container .banner-item-title:hover {
   color: #00ffff;
 }
 
-/* Link de imagen */
-.oferta-container .banner-image-link {
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-
 /* Botones de acción */
 .oferta-container .banner-buttons {
   display: flex;
   gap: 12px;
-  margin-top: 16px;
+  margin-top: auto;
+  padding-top: 12px;
   position: relative;
   z-index: 10;
+  flex-shrink: 0;
 }
 
 .oferta-container .banner-buy-button,
@@ -256,11 +268,7 @@
 
 @media (max-width: 1024px) {
   .oferta-container .banner-product {
-    min-height: 440px;
-  }
-
-  .oferta-container .banner-product img {
-    max-height: 240px;
+    height: 440px;
   }
 
   .oferta-container .banner-product-price {
@@ -282,22 +290,17 @@
   }
 
   .oferta-container .banner-product {
-    min-height: 400px;
+    height: 400px;
     padding: 16px;
-  }
-
-  .oferta-container .banner-product img {
-    max-height: 200px;
   }
 
   .oferta-container .banner-product-price {
     font-size: 1.1rem;
-    top: 16px;
-    right: 16px;
   }
 
   .oferta-container .banner-item-title {
     font-size: 0.9rem;
+    min-height: 2.4em;
   }
 
   .oferta-container .banner-buttons {
@@ -339,26 +342,28 @@
   }
 
   .oferta-container .banner-product {
-    min-height: 360px;
+    height: 380px;
     padding: 14px;
     border-radius: 14px;
   }
 
-  .oferta-container .banner-product img {
-    max-height: 180px;
-    border-radius: 10px;
-  }
-
   .oferta-container .banner-product-price {
     font-size: 1rem;
-    padding: 8px 12px;
-    top: 14px;
-    right: 14px;
+    margin: 6px 0 12px;
   }
 
   .oferta-container .banner-item-title {
     font-size: 0.85rem;
-    margin: 12px 0 6px;
+    margin: 10px 0 6px;
+    min-height: 2.2em;
+  }
+
+  .oferta-container .banner-image-link {
+    border-radius: 10px;
+  }
+
+  .oferta-container .banner-product img {
+    border-radius: 10px;
   }
 
   .oferta-container .slick-prev,
